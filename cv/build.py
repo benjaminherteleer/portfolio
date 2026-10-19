@@ -30,7 +30,6 @@ T = {
         edu_h='Opleiding',
         edu=[
             ('Bachelor Communicatie &amp; Digitale Marketing', 'Arteveldehogeschool Gent', '2021 – 2025', 'Afgestudeerd met onderscheiding.'),
-            ('Goudsmid – juweelontwerper', 'Syntra Antwerpen', '2025 – 2026', 'Productontwerp, precisie en afwerking.'),
         ],
         contact_h='Contact',
         extra='Rijbewijs B · bereid te verhuizen',
@@ -71,7 +70,6 @@ T = {
         edu_h='Education',
         edu=[
             ('Bachelor in Communication &amp; Digital Marketing', 'Arteveldehogeschool Ghent', '2021 – 2025', 'Graduated with distinction.'),
-            ('Goldsmith – jewellery designer', 'Syntra Antwerp', '2025 – 2026', 'Product design, precision and finish.'),
         ],
         contact_h='Contact',
         extra='Driving licence B · open to relocating',
