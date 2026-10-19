@@ -11,7 +11,7 @@ T = {
         profile='Marketeer die zelf maakt. Bij De Dolle Brouwers doe ik sinds 2021 de volledige marketing: campagnes, social media, events, merch en de nieuwe website, van strategie tot uitvoering. Ik zoek een rol in marketing, communicatie of events waar ik concept, content, design en organisatie kan combineren.',
         exp_h='Ervaring',
         jobs=[
-            ('Marketing &amp; communicatie', 'De Dolle Brouwers, Esen', '2021 – nu', 'In de brouwerij sinds 2017, eerst achter de bar en aan de bottellijn.', [
+            ('Marketing &amp; communicatie', 'De Dolle Brouwers, Esen', '2021 – nu', 'Tijdens mijn studie als jobstudent, sinds 2025 vast. In de brouwerij sinds 2017, eerst achter de bar en aan de bottellijn.', [
                 '<b>Dolle Vrijdag</b> bedacht en gelanceerd als eigen merk: naam, logo, affiches, shirts en een eigen Instagram. <b>500+ tickets</b> over twee edities; na elke editie bijgestuurd op basis van welke posts tickets verkochten.',
                 'Events in de brouwerij samen goed voor <b>1.000+ bezoekers</b> (Dolle Vrijdag, Zomerse Vrijdagen, Comedy Brewery).',
                 'Social media (Instagram, Facebook, TikTok) in het Nederlands en Engels: foto, video, copy en eigen illustraties. Reels samen <b>36.500+ views</b>; een zelfgetekende carrousel haalde <b>440+ likes in 18 uur</b>.',
@@ -51,7 +51,7 @@ T = {
         profile='A marketer who makes things. Since 2021 I have run all marketing for De Dolle Brouwers, a Belgian craft brewery: campaigns, social media, events, merch and the new website, from strategy to execution. I am looking for a role in marketing, communications or events where I can combine concept, content, design and organisation.',
         exp_h='Experience',
         jobs=[
-            ('Marketing &amp; communications', 'De Dolle Brouwers, Esen (BE)', '2021 – present', 'At the brewery since 2017, starting behind the bar and on the bottling line.', [
+            ('Marketing &amp; communications', 'De Dolle Brouwers, Esen (BE)', '2021 – present', 'Student job during my studies, permanent since 2025. At the brewery since 2017, starting behind the bar and on the bottling line.', [
                 'Created and launched <b>Dolle Vrijdag</b> as a brand of its own: name, logo, posters, shirts and a dedicated Instagram. <b>500+ tickets</b> across two editions; adjusted after each edition based on which posts sold tickets.',
                 'Brewery events drew <b>1,000+ visitors</b> in total (Dolle Vrijdag, Zomerse Vrijdagen, Comedy Brewery).',
                 'Social media (Instagram, Facebook, TikTok) in Dutch and English: photo, video, copy and my own illustrations. Reels reached <b>36,500+ views</b>; a hand-drawn carousel got <b>440+ likes in 18 hours</b>.',
