@@ -15,7 +15,7 @@ T = {
                 '<b>Dolle Vrijdag</b> bedacht en gelanceerd als eigen merk: naam, logo, affiches, shirts en een eigen Instagram. <b>500+ tickets</b> over twee edities; na elke editie bijgestuurd op basis van welke posts tickets verkochten.',
                 'Events in de brouwerij samen goed voor <b>1.000+ bezoekers</b> (Dolle Vrijdag, Zomerse Vrijdagen, Comedy Brewery).',
                 'Social media (Instagram, Facebook, TikTok) in het Nederlands en Engels: foto, video, copy en eigen illustraties. Reels samen <b>36.500+ views</b>; een zelfgetekende carrousel haalde <b>440+ likes in 18 uur</b>.',
-                'Merchcollectie ontworpen en gelanceerd: shirts, hoodies, sweaters, glas en blik. Drukbestanden, afstemming met drukkers, fotoshoot en online lancering.',
+                'Merchcollectie ontworpen en gelanceerd: shirts, hoodies, sweaters en het Oeral-glas. Drukbestanden, afstemming met drukkers, fotoshoot en online lancering.',
                 'Meta-advertenties opgezet en opgevolgd.',
             ]),
             ('Marketing &amp; sales intern', 'Lisbon Boat Party, Lissabon', 'sep 2024 – jan 2025', '', [
@@ -56,7 +56,7 @@ T = {
                 'Created and launched <b>Dolle Vrijdag</b> as a brand of its own: name, logo, posters, shirts and a dedicated Instagram. <b>500+ tickets</b> across two editions; adjusted after each edition based on which posts sold tickets.',
                 'Brewery events drew <b>1,000+ visitors</b> in total (Dolle Vrijdag, Zomerse Vrijdagen, Comedy Brewery).',
                 'Social media (Instagram, Facebook, TikTok) in Dutch and English: photo, video, copy and my own illustrations. Reels reached <b>36,500+ views</b>; a hand-drawn carousel got <b>440+ likes in 18 hours</b>.',
-                'Designed and launched a merch collection: shirts, hoodies, sweaters, glass and can. Print files, printer coordination, photo shoot and online launch.',
+                'Designed and launched a merch collection: shirts, hoodies, sweaters and the Oeral glass. Print files, printer coordination, photo shoot and online launch.',
                 'Set up and managed Meta ads.',
             ]),
             ('Marketing &amp; sales intern', 'Lisbon Boat Party, Lisbon (PT)', 'Sep 2024 – Jan 2025', '', [
