@@ -41,7 +41,7 @@ T = {
             ('Web', 'Websites van concept tot code (Astro), Shopify'),
         ],
         lang_h='Talen',
-        langs='Nederlands (moedertaal)<br>Engels (zeer goed)<br>Frans (basis)',
+        langs='Nederlands (moedertaal)<br>Engels (zeer goed)<br>Frans (goed)',
         work_h='Bekijk mijn werk',
     ),
     'en': dict(
@@ -81,7 +81,7 @@ T = {
             ('Web', 'Websites from concept to code (Astro), Shopify'),
         ],
         lang_h='Languages',
-        langs='Dutch (native)<br>English (fluent)<br>French (basic)',
+        langs='Dutch (native)<br>English (fluent)<br>French (good)',
         work_h='See my work',
     ),
 }
