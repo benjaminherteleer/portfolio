@@ -165,7 +165,7 @@ def view(k, t):
 <div class="facts"><div><h3>{t['tools_h']}</h3><p>{t['tools']}</p></div><div><h3>{t['langs_h']}</h3><p>{t['langs']}</p></div></div></div></section>
 </main>
 <section class="contact" id="contact{s}"><div class="wrap"><h2>{t['contact_h']}</h2><p class="contact-sub">{t['contact_sub']}</p>
-<div class="contact-row"><div class="copyrow"><code class="mail">benjaminherteleer@hotmail.com</code><button type="button" class="copybtn" data-copy="{t['copy']}" data-copied="{t['copied']}">{t['copy']}</button></div>
+<div class="contact-row"><div class="copyrow"><code class="mail">hallo@benjaminherteleer.work</code><button type="button" class="copybtn" data-copy="{t['copy']}" data-copied="{t['copied']}">{t['copy']}</button></div>
 <a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a><a href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a></div>
 <footer><span>© 2026 Benjamin Herteleer</span><span>{t['footer']}</span></footer></div></section>
 </div>'''
