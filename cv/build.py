@@ -142,7 +142,7 @@ def page(t):
 <li><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219">LinkedIn · Benjamin Herteleer</a></li>
 <li class="muted">{t['extra']}</li></ul></div>
 <div><h2>{t['work_h']}</h2><ul>
-<li><a href="https://benjaminherteleer.netlify.app"><span class="k">benjaminherteleer.netlify.app</span></a></li>
+<li><a href="https://benjaminherteleer.work"><span class="k">benjaminherteleer.work</span></a></li>
 <li><a href="https://www.dedollebrouwers.be">dedollebrouwers.be</a></li>
 <li><a href="https://www.krisherteleer.com">krisherteleer.com</a></li></ul></div>
 <div><h2>{t['skills_h']}</h2><ul>{skills}</ul></div>
