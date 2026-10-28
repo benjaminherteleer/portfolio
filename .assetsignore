@@ -1,0 +1,9 @@
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+build.py
+site.css
+site.js
+cv/build.py
+*.md
