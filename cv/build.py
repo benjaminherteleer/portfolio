@@ -137,7 +137,7 @@ def page(t):
 <div><h2>{t['contact_h']}</h2><ul>
 <li><a href="mailto:benjaminherteleer@hotmail.com">benjaminherteleer@hotmail.com</a></li>
 <li><a href="tel:+32494705597">+32 494 70 55 97</a></li>
-<li><a href="https://www.linkedin.com/in/benjaminherteleer">linkedin.com/in/benjaminherteleer</a></li>
+<li><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219">LinkedIn · Benjamin Herteleer</a></li>
 <li class="muted">{t['extra']}</li></ul></div>
 <div><h2>{t['work_h']}</h2><ul>
 <li><a href="https://benjaminherteleer.netlify.app"><span class="k">benjaminherteleer.netlify.app</span></a></li>

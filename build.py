@@ -154,7 +154,7 @@ def view(k, t):
 <header class="top"><div class="wrap bar"><a class="mark" href="#top{s}">Benjamin Herteleer</a><nav aria-label="Menu">{nav}</nav><div class="right"><a class="btn small" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']}</a><button class="langbtn" type="button" data-set="{'en' if k == 'nl' else 'nl'}">{t['switch']}</button></div></div></header>
 <main class="wrap">
 <section class="hero" id="top{s}"><div class="hero-copy"><p class="avail"><i></i>{t['avail']}</p><p class="eyebrow">{t['eyebrow']}</p><h1>{t['h1']}</h1><p class="intro">{t['intro']}</p>
-<div class="cta"><a class="btn" href="#werk{s}">{t['cta_work']}</a><a class="btn ghost" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/benjaminherteleer" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+<div class="cta"><a class="btn" href="#werk{s}">{t['cta_work']}</a><a class="btn ghost" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
 <figure class="hero-img"><img src="img/me.webp" alt="{t['photo_alt']}" width="506" height="1100"></figure></section>
 <div class="stats">{stats}</div>
 <section class="block"><h2 class="sec">{t['do_h']}</h2><div class="dos">{do}</div></section>
@@ -166,7 +166,7 @@ def view(k, t):
 </main>
 <section class="contact" id="contact{s}"><div class="wrap"><h2>{t['contact_h']}</h2><p class="contact-sub">{t['contact_sub']}</p>
 <div class="contact-row"><div class="copyrow"><code class="mail">benjaminherteleer@hotmail.com</code><button type="button" class="copybtn" data-copy="{t['copy']}" data-copied="{t['copied']}">{t['copy']}</button></div>
-<a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjaminherteleer" target="_blank" rel="noopener">LinkedIn ↗</a><a href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a></div>
+<a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a><a href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a></div>
 <footer><span>© 2026 Benjamin Herteleer</span><span>{t['footer']}</span></footer></div></section>
 </div>'''
 
