@@ -33,7 +33,7 @@ section{padding-inline:clamp(16px,4vw,56px)}
 .langbtn{border:0;background:none;font-family:var(--f-display);font-weight:800;font-size:13px;cursor:pointer;padding:8px}
 
 /* hero */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.42fr);grid-template-areas:"h side" "intro side" "cta side";gap:28px clamp(24px,4vw,64px);padding-top:clamp(32px,6vw,80px);padding-bottom:clamp(48px,7vw,96px);align-items:end}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.42fr);grid-template-areas:"av side" "h side" "intro side" "cta side";gap:28px clamp(24px,4vw,64px);padding-top:clamp(32px,6vw,80px);padding-bottom:clamp(48px,7vw,96px);align-items:end}
 .hero h1{grid-area:h;font-size:clamp(42px,7vw,128px);font-stretch:125%;font-weight:900}
 .hero h1 .w{display:block;overflow:hidden;padding-bottom:.04em}
 .hero h1 .w>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * .12s + .1s)}
@@ -45,7 +45,9 @@ section{padding-inline:clamp(16px,4vw,56px)}
 @keyframes fade{to{opacity:1}}
 .hero-side{grid-area:side;align-self:center}
 .portrait{position:relative;max-width:360px;margin-left:auto;opacity:0;animation:pop .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
-.portrait>img:first-child{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:999px 999px 24px 24px}
+.portrait>img:first-child{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:20px;border:2px solid var(--ink);box-shadow:14px 14px 0 var(--accent)}
+.avail{grid-area:av;justify-self:start;display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--ink);border-radius:99px;padding:7px 14px;font-family:var(--f-display);font-stretch:112%;font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:0;animation:fade .8s .1s forwards}
+.avail i{width:9px;height:9px;border-radius:50%;background:#2FA84F;box-shadow:0 0 0 4px rgba(47,168,79,.2)}
 @keyframes pop{from{opacity:0;transform:scale(.92) rotate(-2deg)}to{opacity:1;transform:none}}
 .badge{position:absolute;left:-46px;bottom:-30px;width:150px;height:150px;animation:spin 18s linear infinite}
 .badge text{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:15.5px;letter-spacing:.06em;fill:var(--ink)}
@@ -154,7 +156,7 @@ section{padding-inline:clamp(16px,4vw,56px)}
 .pm-imgs img{width:100%;border-radius:14px;margin-bottom:14px;break-inside:avoid;background:var(--soft)}
 
 @media (max-width:900px){
-  .hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"side" "h" "intro" "cta"}
+  .hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"side" "av" "h" "intro" "cta"}
   .portrait{max-width:220px;margin:0}
   .badge{left:auto;right:-40px;bottom:-20px;width:110px;height:110px}
   .portrait .s1{left:-40px;top:-20px;width:80px}
@@ -175,7 +177,7 @@ section{padding-inline:clamp(16px,4vw,56px)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .hero h1 .w>span,.intro,.hero .cta,.portrait,.sticker{opacity:1;transform:none}
+  .hero h1 .w>span,.intro,.hero .cta,.portrait,.avail{opacity:1;transform:none}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
