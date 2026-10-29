@@ -37,7 +37,7 @@ T = {
         skills=[
             ('Marketing', 'Campagnes, social media, Meta Ads, eventmarketing, SEO, GEO en SEA'),
             ('Content', 'Copywriting NL/EN, foto en video, illustratie'),
-            ('Design', 'Illustrator, Photoshop, InDesign, Procreate, Canva'),
+            ('Design', 'Photoshop, Canva, Illustrator, Procreate'),
             ('Web', 'Websites van concept tot code (Astro), Shopify'),
             ('AI', 'AI-tools zoals Claude in mijn workflow, om sneller te schrijven en te bouwen'),
         ],
@@ -78,7 +78,7 @@ T = {
         skills=[
             ('Marketing', 'Campaigns, social media, Meta Ads, event marketing, SEO, GEO and SEA'),
             ('Content', 'Copywriting NL/EN, photo and video, illustration'),
-            ('Design', 'Illustrator, Photoshop, InDesign, Procreate, Canva'),
+            ('Design', 'Photoshop, Canva, Illustrator, Procreate'),
             ('Web', 'Websites from concept to code (Astro), Shopify'),
             ('AI', 'AI tools like Claude in my workflow, to write and build faster'),
         ],
