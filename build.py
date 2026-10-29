@@ -1,173 +1,185 @@
 """Generates index.html (Dutch + English in one page). Edit the texts here, then run: python3 build.py"""
+import json
 from pathlib import Path
 
 HERE = Path(__file__).parent
 
 IMG = {  # width, height
     'me': (506, 1100), 'ph-dv-crowd': (1100, 733), 'ev-dv-poster': (834, 1100), 'ev-dv-logo': (964, 1100),
-    'ph-dv-team': (733, 1100), 'web-ddb-home': (1200, 750), 'web-ddb-beer': (1200, 750), 'web-ddb-nieuws': (1200, 750),
-    'web-ddb-shop': (1200, 750), 'ph-merch-hoodie': (880, 1100), 'ph-merch-rack': (880, 1100), 'ph-black-front': (880, 1100),
-    'oe-can-cut': (427, 671), 'brew-01': (960, 1200), 'stillenacht-illu': (797, 1065), 'reserva': (797, 850),
-    'xmas-card': (797, 799), 'site-home': (800, 499), 'ev-zv-a6': (993, 1400), 'boskeun-illu': (797, 978),
-    'd-crew': (1054, 1010), 'ev-comedy': (825, 1100), 'oe-glass': (690, 1038),
+    'ph-dv-team': (733, 1100), 'd-dv': (860, 1100), 'web-ddb-home': (1200, 750), 'web-ddb-beer': (1200, 750),
+    'web-ddb-nieuws': (1200, 750), 'web-ddb-shop': (1200, 750), 'ph-merch-hoodie': (880, 1100),
+    'ph-merch-rack': (880, 1100), 'ph-merch-sweater': (880, 1100), 'ph-black-front': (880, 1100),
+    'ph-black-back': (880, 1100), 'd-crew': (1054, 1010), 'd-brewing': (746, 1100), 'd-white': (1100, 513),
+    'oe-glass': (690, 1038), 'brew-01': (960, 1200), 'brew-02': (960, 1200), 'brew-03': (960, 1200),
+    'brew-04': (960, 1200), 'brew-05': (960, 1200), 'brew-07': (960, 1200), 'brew-09': (960, 1200),
+    'brew-10': (960, 1200), 'brew-12': (960, 1200), 'stillenacht-illu': (797, 1065), 'xmas-card': (797, 799),
+    'boskeun-illu': (797, 978), 'valentine': (797, 799), 'reserva': (797, 850), 'lichtervelds': (797, 999),
+    'stout': (797, 1022), 'signs45': (797, 1002), 'site-home': (800, 499), 'site-collections': (800, 499),
 }
+
+# Projects: (key, cover, size class, images). Texts per language below.
+PROJECTS = [
+    ('ddb', 'web-ddb-home', 'wide', ['web-ddb-home', 'web-ddb-beer', 'web-ddb-nieuws', 'web-ddb-shop']),
+    ('brew', 'brew-01', 'tall', ['brew-01', 'brew-02', 'brew-03', 'brew-04', 'brew-05', 'brew-07', 'brew-09', 'brew-10', 'brew-12']),
+    ('merch', 'ph-merch-hoodie', 'tall', ['ph-merch-hoodie', 'ph-merch-rack', 'ph-black-front', 'ph-black-back', 'ph-merch-sweater', 'd-crew', 'd-brewing', 'oe-glass']),
+    ('illu', 'stillenacht-illu', 'tall', ['stillenacht-illu', 'xmas-card', 'boskeun-illu', 'valentine', 'reserva', 'lichtervelds', 'stout', 'signs45']),
+    ('dv', 'ev-dv-poster', 'tall', ['ph-dv-crowd', 'ev-dv-poster', 'ev-dv-logo', 'd-dv', 'ph-dv-team']),
+    ('kris', 'site-home', 'wide', ['site-home', 'site-collections']),
+]
 
 T = {
  'nl': dict(
-  nav=[('#werk', 'Werk'), ('#over', 'Over mij'), ('#contact', 'Contact')], switch='EN', cv='cv-benjamin-herteleer.pdf', cv_btn='Download cv',
-  avail='Op zoek naar een nieuwe job in marketing, communicatie of events',
-  eyebrow='Benjamin Herteleer · marketing &amp; communicatie',
-  h1='Marketeer die zelf maakt.',
-  intro='Sinds 2021 doe ik de volledige marketing van <strong>De Dolle Brouwers</strong>, een Belgische ambachtelijke brouwerij: van campagne en content tot event, merch en website. Ik bedenk het idee en maak het ook. Nu zoek ik een nieuwe uitdaging.',
-  cta_work='Bekijk mijn werk', photo_alt='Portret van Benjamin Herteleer',
-  stats=[('500+', 'tickets verkocht', 'Dolle Vrijdag, twee edities'), ('1.000+', 'bezoekers op events', 'die ik mee organiseerde en promootte'), ('36.500+', 'views op reels', 'mijn acht best bekeken reels')],
+  nav=[('#werk', 'Werk'), ('#over', 'Over'), ('#contact', 'Contact')], switch='EN', cv='cv-benjamin-herteleer.pdf', cv_btn='Cv',
+  badge='OPEN VOOR EEN NIEUWE JOB · AI-ENTHOUSIAST · ',
+  h1=['Marketeer', 'die zelf', 'maakt.'],
+  intro='Ik ben Benjamin. Ik bedenk merken, campagnes en content, en ik maak ze ook: van de affiche tot de website. Sinds 2021 doe ik dat voor <strong>De Dolle Brouwers</strong>, nu zoek ik een nieuw team.',
+  cta_work='Bekijk mijn werk', cta_talk='Laten we praten',
+  marquee=['Branding', 'Content', 'Web', 'Illustratie', 'AI', 'Social', 'Merch'],
+  more_h='Benieuwd naar meer?', more_p='Ik vertel graag het hele verhaal achter elk project.',
+  work_h='Werk', work_sub='Een greep uit wat ik maakte. Klik op een project voor meer.',
+  open='Bekijk project', visit='Bezoek de site',
+  projects={
+   'ddb': ('dedollebrouwers.be', 'Web · Copy · Design · AI',
+           'De nieuwe website van de brouwerij, van structuur en tweetalige teksten tot design en code. Met een pagina per bier, een webshop, rondleidingen boeken, een kaart met verkooppunten en een maandelijkse krant. Gebouwd met Claude: ik bedacht, schreef en stuurde bij, AI bouwde mee.',
+           'https://www.dedollebrouwers.be'),
+   'brew': ('Brewed the Dolle way', 'Illustratie · Social',
+            'Twaalf zelfgetekende slides die het brouwproces uitleggen, met de Oerbier-mannetjes in de hoofdrol. De tekeningen kregen daarna een tweede leven als shirt en als pagina op de nieuwe website.', None),
+   'merch': ('Merch', 'Design · Productie',
+             'Shirts, hoodies, sweaters en het Oeral-glas. Van ontwerp en drukbestand tot drukproef, fotoshoot en lancering. Fans vroegen al jaren naar de sweaters, nu zijn ze er.', None),
+   'illu': ('Social &amp; illustratie', 'Content · Illustratie',
+            'Het brouwjaar online, van Boskeun met Pasen tot Stille Nacht in december. Eigen foto\'s, video en illustraties waarin de figuren van de brouwerij nieuwe scènes beleven, in het Nederlands en Engels.', None),
+   'dv': ('Dolle Vrijdag', 'Event · Branding',
+          'Een avondfeest in de brouwerij, gebouwd als eigen merk om een jonger publiek binnen te halen: naam, logo met een discobal-mannetje, affiches, shirts en een eigen Instagram.', None),
+   'kris': ('krisherteleer.com', 'Web · Design',
+            'Een online galerij voor honderden werken van kunstenaar Kris Herteleer, met acht collecties, een interactieve kaart en een handtekening die zichzelf tekent.', 'https://www.krisherteleer.com'),
+  },
   do_h='Wat ik doe',
-  do=[('Campagnes &amp; events', 'Van idee tot uitvoering: concept, planning, promotie en ticketverkoop.'),
-      ('Social media &amp; content', 'Instagram, Facebook en TikTok in het Nederlands en Engels. Foto, video, copy en Meta Ads.'),
-      ('Design &amp; merch', 'Huisstijl, affiches, drukwerk en merch, tot en met de drukproef.'),
-      ('Web &amp; AI', 'Websites van structuur en copy tot design en code. AI-enthousiast: ik werk dagelijks met Claude.')],
-  work_h='Geselecteerd werk', work_sub='Vier projecten, telkens met de opdracht, mijn aanpak en wat het opleverde.',
-  lab=('Opdracht', 'Aanpak', 'Resultaat'),
-  cases=[
-   dict(kicker='Event · 2025–2026', title='Dolle Vrijdag', sum='Een nieuw avondevent in de brouwerij, gebouwd als eigen merk.',
-        q='Een jonger publiek naar De Dolle halen, mensen die de brouwerij nog niet kenden.',
-        a='Naam, logo, affiches, shirts en een eigen Instagram-account, met online ticketverkoop. Na elke editie keek ik welke posts tickets verkochten en stuurde ik bij.',
-        r='<b>500+ tickets</b> over twee edities, met een publiek dat voordien niet naar de brouwerij kwam.',
-        media='row', imgs=[('ph-dv-crowd', 'cover', 'Publiek op Dolle Vrijdag'), ('ev-dv-poster', 'contain', 'Affiche Terraseditie 2026'), ('ev-dv-logo', 'contain', 'Logo Dolle Vrijdag'), ('ph-dv-team', 'cover', 'Het team in de Dolle Vrijdag-shirts')],
-        credit="Foto's: @howmie.be"),
-   dict(kicker='Website · 2026', title='dedollebrouwers.be', sum='De nieuwe website van de brouwerij, volledig zelf ontwikkeld.',
-        q='Een verouderde site vervangen door één die klinkt en eruitziet als het merk, in twee talen.',
-        a='Structuur, alle copy in het Nederlands en Engels, design en ontwikkeling. Met een pagina per bier, webshop, rondleidingen boeken, een verkooppuntenkaart en een maandelijkse nieuwspagina.',
-        r='<b>Live</b> op dedollebrouwers.be: één plek voor bezoekers, bierfans en verkooppunten, in het Nederlands en Engels.',
-        media='web', imgs=[('web-ddb-home', 'cover', 'Homepagina'), ('web-ddb-beer', 'cover', 'Bierpagina Oerbier'), ('web-ddb-nieuws', 'cover', 'Oerbier Fake Nieuws'), ('web-ddb-shop', 'cover', 'Oershop')],
-        link=('https://www.dedollebrouwers.be', 'Bezoek de site')),
-   dict(kicker='Merch', title='Merchcollectie', sum='Shirts, hoodies en sweaters, plus het Oeral-glas.',
-        q='Fans vroegen al vier jaar naar de sweaters. Tijd voor een collectie die past bij het merk.',
-        a='Ontwerpen met de figuren van de brouwerij, drukbestanden, afstemming met drukkers en drukproeven, een fotoshoot en de online lancering.',
-        r='<b>Een volledige collectie</b>, gelanceerd op social media en te koop in de Oershop op de nieuwe website.',
-        media='row', imgs=[('ph-merch-hoodie', 'cover', 'Hoodie met rugprint'), ('ph-merch-rack', 'cover', 'Hoodie en sweater'), ('ph-black-front', 'cover', 'Het zwarte shirt'), ('oe-glass', 'contain', 'Het Oeral-glas')],
-        credit="Productfoto's: carolleservaygephotography"),
-   dict(kicker='Social media &amp; content', title='Het brouwjaar online', sum='Instagram, Facebook en TikTok, het hele jaar door.',
-        q='De brouwerij het hele jaar zichtbaar houden, in het Nederlands en Engels, voor fans in binnen- en buitenland.',
-        a='Content volgens het brouwjaar, van Boskeun met Pasen tot Stille Nacht in december. Foto, video, copy en eigen illustraties. Ik volg op welke posts bereik halen en welke verkopen.',
-        r='<b>36.500+ views</b> op mijn acht best bekeken reels. De zelfgetekende carrousel "Brewed the Dolle way" haalde <b>440+ likes in 18 uur</b>.',
-        media='row', imgs=[('brew-01', 'cover', 'Carrousel Brewed the Dolle way'), ('stillenacht-illu', 'cover', 'Stille Nacht, eigen illustratie'), ('reserva', 'cover', 'Oerbier Reserva'), ('xmas-card', 'cover', 'Kerstkaart, eigen illustratie')]),
-  ],
-  more_h='Meer werk',
-  more=[('site-home', 'cover', 'krisherteleer.com', 'Online galerij voor honderden werken van kunstenaar Kris Herteleer, met 8 collecties en een interactieve kaart.', ('https://www.krisherteleer.com', 'Bekijk de site')),
-        ('ev-zv-a6', 'contain', 'Zomerse Vrijdagen &amp; Comedy Brewery', 'Illustratie, flyers, affiches en promotie voor andere events in de brouwerij.', None),
-        ('d-crew', 'contain', 'Illustratie', 'Eigen tekeningen met de figuren van de brouwerij, voor posts, kaarten en shirts.', None)],
+  do=[('Merk &amp; design', 'Huisstijlen, logo\'s, affiches en merch die je herkent van ver.'),
+      ('Content &amp; social', 'Foto, video, copy en illustraties, in het Nederlands en Engels.'),
+      ('Web', 'Sites van structuur en teksten tot design en code.'),
+      ('AI', 'Ik werk elke dag met Claude: sneller maken, zonder dat het naar AI ruikt.')],
+  ai_h='Gebouwd met AI.',
+  ai_p='Deze site, mijn cv en dedollebrouwers.be heb ik gemaakt met Claude. Ik bedenk het idee en bewaak de smaak, AI bouwt mee. Zo maak ik in weken wat vroeger een bureau en maanden vroeg.',
   about_h='Over mij',
-  about='Ik werk het liefst waar een idee snel zichtbaar wordt: een campagne bedenken, de affiche ontwerpen, de posts schrijven, de site bouwen en mee op het event staan. Ik studeerde Communicatie &amp; Digitale Marketing aan de Arteveldehogeschool en liep stage in Lissabon. Nu zoek ik een rol in marketing, communicatie of events, bij een merk, cultuurhuis of organisatie met een eigen verhaal.',
-  about_extra='Rijbewijs B · bereid om te verhuizen',
-  exp_h='Ervaring', edu_h='Opleiding',
-  exp=[('2021 – nu', 'Marketing &amp; communicatie', 'De Dolle Brouwers, Esen', 'Volledige marketing: campagnes, social media en Meta Ads, events, merch en de website. Tijdens mijn studie als jobstudent, sinds 2025 vast. In de brouwerij sinds 2017.'),
-       ('2024 – 2025', 'Marketing &amp; sales intern', 'Lisbon Boat Party, Lissabon', 'Social media, Meta Ads, en SEO en SEA op GetYourGuide, Viator, Klook en Shotgun.')],
-  edu=[('2021 – 2025', 'Bachelor Communicatie &amp; Digitale Marketing', 'Arteveldehogeschool Gent', 'Afgestudeerd met onderscheiding.')],
-  tools_h='Tools', tools='Illustrator, Photoshop, InDesign, Procreate, Canva, Meta Business Suite en Ads Manager, Shopify, Astro, Claude en andere AI-tools',
-  langs_h='Talen', langs='Nederlands (moedertaal), Engels (zeer goed), Frans (goed)',
-  contact_h='Laten we praten.', contact_sub='Zoek je iemand die een campagne kan bedenken én maken? Stuur me een mail of bel me gerust.',
-  copy='Kopieer', copied='Gekopieerd', footer='Zelf geschreven, ontworpen en gebouwd.', close='Sluiten',
+  about='Ik groeide op in een brouwerij, studeerde Communicatie &amp; Digitale Marketing aan de Arteveldehogeschool en liep stage in Lissabon. Ik werk het liefst in een jong team, waar een idee snel zichtbaar wordt. Rijbewijs B, en bereid om te verhuizen.',
+  tl=[('2021 – nu', 'Marketing &amp; communicatie', 'De Dolle Brouwers · jobstudent, vast sinds 2025'),
+      ('2024 – 2025', 'Marketing &amp; sales intern', 'Lisbon Boat Party, Lissabon'),
+      ('2021 – 2025', 'Bachelor Communicatie &amp; Digitale Marketing', 'Arteveldehogeschool Gent · met onderscheiding')],
+  tools='Illustrator · Photoshop · InDesign · Procreate · Canva · Meta Ads · Shopify · Astro · Claude',
+  langs='Nederlands · Engels · Frans',
+  contact_h=['Laten we', 'praten.'], contact_sub='Zoek je iemand die een idee kan bedenken én maken? Stuur me een mail.',
+  sticker='Let\'s talk!', copy='Kopieer', copied='Gekopieerd', footer='Zelf ontworpen en gebouwd, met Claude.', close='Sluiten',
  ),
  'en': dict(
-  nav=[('#werk-en', 'Work'), ('#over-en', 'About'), ('#contact-en', 'Contact')], switch='NL', cv='cv-benjamin-herteleer-en.pdf', cv_btn='Download CV',
-  avail='Looking for a new role in marketing, communications or events',
-  eyebrow='Benjamin Herteleer · marketing &amp; communications',
-  h1='A marketer who makes things.',
-  intro='Since 2021 I have run all marketing for <strong>De Dolle Brouwers</strong>, a Belgian craft brewery: from campaign and content to event, merch and website. I come up with the idea and make it too. Now I am looking for a new challenge.',
-  cta_work='See my work', photo_alt='Portrait of Benjamin Herteleer',
-  stats=[('500+', 'tickets sold', 'Dolle Vrijdag, two editions'), ('1,000+', 'event visitors', 'at events I helped run and promote'), ('36,500+', 'reel views', 'my eight most viewed reels')],
+  nav=[('#werk-en', 'Work'), ('#over-en', 'About'), ('#contact-en', 'Contact')], switch='NL', cv='cv-benjamin-herteleer-en.pdf', cv_btn='CV',
+  badge='OPEN TO A NEW ROLE · AI ENTHUSIAST · ',
+  h1=['A marketer', 'who makes', 'things.'],
+  intro='I\'m Benjamin. I come up with brands, campaigns and content, and I make them too: from the poster to the website. Since 2021 I\'ve done that for <strong>De Dolle Brouwers</strong>, now I\'m looking for a new team.',
+  cta_work='See my work', cta_talk='Let\'s talk',
+  marquee=['Branding', 'Content', 'Web', 'Illustration', 'AI', 'Social', 'Merch'],
+  more_h='Curious for more?', more_p='Happy to tell you the full story behind every project.',
+  work_h='Work', work_sub='A selection of things I made. Click a project for more.',
+  open='View project', visit='Visit the site',
+  projects={
+   'ddb': ('dedollebrouwers.be', 'Web · Copy · Design · AI',
+           'The brewery\'s new website, from structure and bilingual copy to design and code. With a page per beer, a web shop, tour booking, a stockist map and a monthly newspaper. Built with Claude: I came up with it, wrote it and steered it, AI helped build it.',
+           'https://www.dedollebrouwers.be/en'),
+   'brew': ('Brewed the Dolle way', 'Illustration · Social',
+            'Twelve hand-drawn slides explaining the brewing process, starring the little Oerbier men. The drawings later got a second life as a shirt and as a page on the new website.', None),
+   'merch': ('Merch', 'Design · Production',
+             'Shirts, hoodies, sweaters and the Oeral glass. From design and print files to proofs, photo shoot and launch. Fans had been asking for the sweaters for years, now they\'re here.', None),
+   'illu': ('Social &amp; illustration', 'Content · Illustration',
+            'The brewing year online, from Boskeun at Easter to Stille Nacht in December. My own photos, video and illustrations that put the brewery\'s characters in new scenes, in Dutch and English.', None),
+   'dv': ('Dolle Vrijdag', 'Event · Branding',
+          'An evening party at the brewery, built as a brand of its own to bring in a younger crowd: name, a disco-ball mascot logo, posters, shirts and a dedicated Instagram.', None),
+   'kris': ('krisherteleer.com', 'Web · Design',
+            'An online gallery for hundreds of works by artist Kris Herteleer, with eight collections, an interactive map and a signature that draws itself.', 'https://www.krisherteleer.com'),
+  },
   do_h='What I do',
-  do=[('Campaigns &amp; events', 'From idea to execution: concept, planning, promotion and ticketing.'),
-      ('Social media &amp; content', 'Instagram, Facebook and TikTok in Dutch and English. Photo, video, copy and Meta Ads.'),
-      ('Design &amp; merch', 'Identity, posters, print and merch, all the way to the print proof.'),
-      ('Web &amp; AI', 'Websites from structure and copy to design and code. AI enthusiast: I work with Claude every day.')],
-  work_h='Selected work', work_sub='Four projects, each with the brief, my approach and what it delivered.',
-  lab=('Brief', 'Approach', 'Result'),
-  cases=[
-   dict(kicker='Event · 2025–2026', title='Dolle Vrijdag', sum='A new evening event at the brewery, built as a brand of its own.',
-        q='Bring a younger crowd to De Dolle, people who did not know the brewery yet.',
-        a='Name, logo, posters, shirts and a dedicated Instagram account, with online ticketing. After each edition I looked at which posts sold tickets and adjusted.',
-        r='<b>500+ tickets</b> across two editions, from a crowd that had not come to the brewery before.',
-        media='row', imgs=[('ph-dv-crowd', 'cover', 'Crowd at Dolle Vrijdag'), ('ev-dv-poster', 'contain', 'Poster, 2026 edition'), ('ev-dv-logo', 'contain', 'Dolle Vrijdag logo'), ('ph-dv-team', 'cover', 'The team in Dolle Vrijdag shirts')],
-        credit='Photos: @howmie.be'),
-   dict(kicker='Website · 2026', title='dedollebrouwers.be', sum="The brewery's new website, fully developed by me.",
-        q='Replace an outdated site with one that sounds and looks like the brand, in two languages.',
-        a='Structure, all copy in Dutch and English, design and development. With a page per beer, a web shop, tour booking, a stockist map and a monthly news page.',
-        r='<b>Live</b> at dedollebrouwers.be: one place for visitors, beer fans and stockists, in Dutch and English.',
-        media='web', imgs=[('web-ddb-home', 'cover', 'Homepage'), ('web-ddb-beer', 'cover', 'Oerbier beer page'), ('web-ddb-nieuws', 'cover', 'Oerbier Fake Nieuws'), ('web-ddb-shop', 'cover', 'Oershop')],
-        link=('https://www.dedollebrouwers.be/en', 'Visit the site')),
-   dict(kicker='Merch', title='Merch collection', sum='Shirts, hoodies and sweaters, plus the Oeral glass.',
-        q='Fans had been asking for the sweaters for four years. Time for a collection that fits the brand.',
-        a="Designs with the brewery's characters, print files, printer coordination and proofs, a photo shoot and the online launch.",
-        r='<b>A full collection</b>, launched on social media and for sale in the Oershop on the new website.',
-        media='row', imgs=[('ph-merch-hoodie', 'cover', 'Hoodie with back print'), ('ph-merch-rack', 'cover', 'Hoodie and sweater'), ('ph-black-front', 'cover', 'The black shirt'), ('oe-glass', 'contain', 'The Oeral glass')],
-        credit='Product photos: carolleservaygephotography'),
-   dict(kicker='Social media &amp; content', title='The brewing year online', sum='Instagram, Facebook and TikTok, all year round.',
-        q='Keep the brewery visible all year, in Dutch and English, for fans at home and abroad.',
-        a='Content that follows the brewing year, from Boskeun at Easter to Stille Nacht in December. Photo, video, copy and my own illustrations. I track which posts get reach and which ones sell.',
-        r='<b>36,500+ views</b> on my eight most viewed reels. The hand-drawn carousel "Brewed the Dolle way" got <b>440+ likes in 18 hours</b>.',
-        media='row', imgs=[('brew-01', 'cover', 'Brewed the Dolle way carousel'), ('stillenacht-illu', 'cover', 'Stille Nacht, my illustration'), ('reserva', 'cover', 'Oerbier Reserva'), ('xmas-card', 'cover', 'Christmas card, my illustration')]),
-  ],
-  more_h='More work',
-  more=[('site-home', 'cover', 'krisherteleer.com', 'Online gallery for hundreds of works by artist Kris Herteleer, with 8 collections and an interactive map.', ('https://www.krisherteleer.com', 'View the site')),
-        ('ev-zv-a6', 'contain', 'Zomerse Vrijdagen &amp; Comedy Brewery', 'Illustration, flyers, posters and promotion for other events at the brewery.', None),
-        ('d-crew', 'contain', 'Illustration', "My own drawings of the brewery's characters, for posts, cards and shirts.", None)],
+  do=[('Brand &amp; design', 'Identities, logos, posters and merch you recognise from afar.'),
+      ('Content &amp; social', 'Photo, video, copy and illustration, in Dutch and English.'),
+      ('Web', 'Sites from structure and copy to design and code.'),
+      ('AI', 'I work with Claude every day: making things faster, without it smelling like AI.')],
+  ai_h='Built with AI.',
+  ai_p='This site, my CV and dedollebrouwers.be were made with Claude. I come up with the idea and guard the taste, AI helps build. That way I make in weeks what used to take an agency months.',
   about_h='About me',
-  about='I work best where an idea quickly becomes visible: coming up with a campaign, designing the poster, writing the posts, building the site and being there at the event. I studied Communication &amp; Digital Marketing at Arteveldehogeschool and did an internship in Lisbon. Now I am looking for a role in marketing, communications or events, at a brand, cultural venue or organisation with a story of its own.',
-  about_extra='Driving licence B · open to relocating',
-  exp_h='Experience', edu_h='Education',
-  exp=[('2021 – present', 'Marketing &amp; communications', 'De Dolle Brouwers, Esen (BE)', 'All marketing: campaigns, social media and Meta Ads, events, merch and the website. Student job during my studies, permanent since 2025. At the brewery since 2017.'),
-       ('2024 – 2025', 'Marketing &amp; sales intern', 'Lisbon Boat Party, Lisbon (PT)', 'Social media, Meta Ads, plus SEO and SEA on GetYourGuide, Viator, Klook and Shotgun.')],
-  edu=[('2021 – 2025', 'Bachelor in Communication &amp; Digital Marketing', 'Arteveldehogeschool Ghent', 'Graduated with distinction.')],
-  tools_h='Tools', tools='Illustrator, Photoshop, InDesign, Procreate, Canva, Meta Business Suite and Ads Manager, Shopify, Astro, Claude and other AI tools',
-  langs_h='Languages', langs='Dutch (native), English (fluent), French (good)',
-  contact_h="Let's talk.", contact_sub='Looking for someone who can come up with a campaign and make it too? Send me an email or give me a call.',
-  copy='Copy', copied='Copied', footer='Written, designed and built by me.', close='Close',
+  about='I grew up in a brewery, studied Communication &amp; Digital Marketing at Arteveldehogeschool and did an internship in Lisbon. I work best in a young team, where an idea quickly becomes visible. Driving licence, open to relocating.',
+  tl=[('2021 – present', 'Marketing &amp; communications', 'De Dolle Brouwers · student job, permanent since 2025'),
+      ('2024 – 2025', 'Marketing &amp; sales intern', 'Lisbon Boat Party, Lisbon'),
+      ('2021 – 2025', 'Bachelor in Communication &amp; Digital Marketing', 'Arteveldehogeschool Ghent · with distinction')],
+  tools='Illustrator · Photoshop · InDesign · Procreate · Canva · Meta Ads · Shopify · Astro · Claude',
+  langs='Dutch · English · French',
+  contact_h=['Let\'s', 'talk.'], contact_sub='Looking for someone who can come up with an idea and make it too? Send me an email.',
+  sticker='Let\'s talk!', copy='Copy', copied='Copied', footer='Designed and built by me, with Claude.', close='Close',
  ),
 }
 
-def img(name, fit, alt, cls='shot', sizes=''):
+def pic(name, alt, cls='', lazy=True):
     w, h = IMG[name]
-    return (f'<button class="{cls} {fit}" type="button" data-full="img/{name}.webp" data-cap="{alt}">'
-            f'<img src="img/{name}.webp" alt="{alt}" width="{w}" height="{h}" loading="lazy"></button>')
+    lz = ' loading="lazy"' if lazy else ''
+    return f'<img class="{cls}" src="img/{name}.webp" alt="{alt}" width="{w}" height="{h}"{lz}>'
+
+def badge_svg(text):
+    return ('<svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>'
+            f'<text><textPath href="#c">{text}{text}</textPath></text><circle cx="100" cy="100" r="30"/></svg>')
 
 def view(k, t):
     s = '' if k == 'nl' else '-en'
-    nav = ''.join(f'<a href="{h}">{l}</a>' for h, l in t['nav'])
-    stats = ''.join(f'<div class="stat"><b>{n}</b><span>{w}</span><small>{c}</small></div>' for n, w, c in t['stats'])
-    do = ''.join(f'<div class="do"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i, (h, p) in enumerate(t['do']))
-    cases = ''
-    for i, c in enumerate(t['cases']):
-        media = ''.join(img(n, f, a) for n, f, a in c['imgs'])
-        link = f'<a class="btn" href="{c["link"][0]}" target="_blank" rel="noopener">{c["link"][1]} ↗</a>' if c.get('link') else ''
-        credit = f'<p class="credit">{c["credit"]}</p>' if c.get('credit') else ''
-        cases += (f'<article class="case"><div class="case-head"><div><p class="kicker"><span>0{i+1}</span>{c["kicker"]}</p><h3>{c["title"]}</h3><p class="sum">{c["sum"]}</p>{link}</div>'
-                  f'<dl class="qar"><div><dt>{t["lab"][0]}</dt><dd>{c["q"]}</dd></div><div><dt>{t["lab"][1]}</dt><dd>{c["a"]}</dd></div><div class="res"><dt>{t["lab"][2]}</dt><dd>{c["r"]}</dd></div></dl></div>'
-                  f'<div class="media {c["media"]}">{media}</div>{credit}</article>')
-    more = ''
-    for n, f, h, p, l in t['more']:
-        link = f'<a href="{l[0]}" target="_blank" rel="noopener">{l[1]} ↗</a>' if l else ''
-        more += f'<div class="more-card">{img(n, f, h)}<h3>{h}</h3><p>{p}</p>{link}</div>'
-    tl = lambda rows: ''.join(f'<li><span class="when">{w}</span><div><b>{r}</b><span class="org">{o}</span><p>{d}</p></div></li>' for w, r, o, d in rows)
+    nav = ''.join(f'<a class="pill" href="{h}">{l}</a>' for h, l in t['nav'])
+    words = ''.join(f'<span class="w" style="--i:{i}"><span>{w}</span></span>' for i, w in enumerate(t['h1']))
+    mq = ''.join(f'<span>{w}</span><i>✱</i>' for w in t['marquee']) * 2
+    cards = ''
+    for key, cover, size, imgs in PROJECTS:
+        title, tags, text, link = t['projects'][key]
+        data = json.dumps({'t': title, 'g': tags, 'p': text, 'l': link, 'v': t['visit'], 'i': [[f'img/{n}.webp', IMG[n][0], IMG[n][1]] for n in imgs]}, ensure_ascii=False).replace("'", '&#39;')
+        cards += (f'<button class="card {size} reveal" type="button" data-project=\'{data}\' aria-label="{t["open"]}: {title}">'
+                  f'<span class="frame">{pic(cover, title)}</span><span class="meta"><b>{title}</b><em>{tags}</em><span class="go" aria-hidden="true">↗</span></span></button>')
+    dos = ''.join(f'<li class="reveal"><span class="n">0{i+1}</span><h3>{h}</h3><p>{p}</p><span class="arr" aria-hidden="true">→</span></li>' for i, (h, p) in enumerate(t['do']))
+    tl = ''.join(f'<li><span>{w}</span><b>{r}</b><em>{o}</em></li>' for w, r, o in t['tl'])
     return f'''<div class="lang" id="lang-{k}" lang="{k}"{'' if k == 'nl' else ' hidden'}>
-<header class="top"><div class="wrap bar"><a class="mark" href="#top{s}">Benjamin Herteleer</a><nav aria-label="Menu">{nav}</nav><div class="right"><a class="btn small" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']}</a><button class="langbtn" type="button" data-set="{'en' if k == 'nl' else 'nl'}">{t['switch']}</button></div></div></header>
-<main class="wrap">
-<section class="hero" id="top{s}"><div class="hero-copy"><p class="avail"><i></i>{t['avail']}</p><p class="eyebrow">{t['eyebrow']}</p><h1>{t['h1']}</h1><p class="intro">{t['intro']}</p>
-<div class="cta"><a class="btn" href="#werk{s}">{t['cta_work']}</a><a class="btn ghost" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
-<figure class="hero-img"><img src="img/me.webp" alt="{t['photo_alt']}" width="506" height="1100"></figure></section>
-<div class="stats">{stats}</div>
-<section class="block"><h2 class="sec">{t['do_h']}</h2><div class="dos">{do}</div></section>
-<section class="block" id="werk{s}"><div class="sec-row"><h2 class="sec">{t['work_h']}</h2><p>{t['work_sub']}</p></div>{cases}</section>
-<section class="block"><h2 class="sec">{t['more_h']}</h2><div class="more">{more}</div></section>
-<section class="block about" id="over{s}"><div><h2 class="sec">{t['about_h']}</h2><p class="about-text">{t['about']}</p><p class="extra">{t['about_extra']}</p></div>
-<div class="cv-col"><h3>{t['exp_h']}</h3><ul class="tl">{tl(t['exp'])}</ul><h3>{t['edu_h']}</h3><ul class="tl">{tl(t['edu'])}</ul>
-<div class="facts"><div><h3>{t['tools_h']}</h3><p>{t['tools']}</p></div><div><h3>{t['langs_h']}</h3><p>{t['langs']}</p></div></div></div></section>
-</main>
-<section class="contact" id="contact{s}"><div class="wrap"><h2>{t['contact_h']}</h2><p class="contact-sub">{t['contact_sub']}</p>
-<div class="contact-row"><div class="copyrow"><code class="mail">hallo@benjaminherteleer.work</code><button type="button" class="copybtn" data-copy="{t['copy']}" data-copied="{t['copied']}">{t['copy']}</button></div>
-<a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a><a href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a></div>
-<footer><span>© 2026 Benjamin Herteleer</span><span>{t['footer']}</span></footer></div></section>
+<header class="top"><a class="logo" href="#top{s}" aria-label="Benjamin Herteleer">BH</a><nav aria-label="Menu">{nav}</nav>
+<div class="right"><a class="pill dark" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><button class="langbtn" type="button" data-set="{'en' if k == 'nl' else 'nl'}">{t['switch']}</button></div></header>
+
+<section class="hero" id="top{s}">
+ <h1>{words}</h1>
+ <div class="hero-side">
+  <div class="portrait">{pic('me', 'Benjamin Herteleer', lazy=False)}{badge_svg(t['badge'])}<img class="sticker s1" src="img/d-crew.webp" alt="" width="1054" height="1010"><img class="sticker s2" src="img/ev-dv-logo.webp" alt="" width="964" height="1100"></div>
+ </div>
+ <p class="intro">{t['intro']}</p>
+ <div class="cta"><a class="pill big dark" href="#werk{s}">{t['cta_work']} →</a><a class="pill big" href="#contact{s}">{t['cta_talk']}</a></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">{mq}</div></div>
+
+<section class="work" id="werk{s}">
+ <div class="sec-head reveal"><h2>{t['work_h']}</h2><p>{t['work_sub']}</p></div>
+ <div class="grid">{cards}<a class="card tall more reveal" href="#contact{s}"><span class="frame"><span class="more-in"><b>{t['more_h']}</b><span>{t['more_p']}</span><span class="go" aria-hidden="true">→</span></span></span></a></div>
+</section>
+
+<section class="dos">
+ <h2 class="reveal">{t['do_h']}</h2>
+ <ul>{dos}</ul>
+</section>
+
+<section class="ai">
+ <div class="ai-in reveal"><span class="spark" aria-hidden="true">✦</span><h2>{t['ai_h']}</h2><p>{t['ai_p']}</p></div>
+</section>
+
+<section class="about" id="over{s}">
+ <div class="reveal"><h2>{t['about_h']}</h2><p class="lead">{t['about']}</p>
+ <div class="facts"><p>{t['tools']}</p><p>{t['langs']}</p></div>
+ <div class="cta"><a class="pill dark" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><a class="pill" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+ <ul class="tl reveal">{tl}</ul>
+</section>
+
+<section class="contact" id="contact{s}">
+ <span class="talk" aria-hidden="true">{t['sticker']}</span>
+ <h2><span>{t['contact_h'][0]}</span><span>{t['contact_h'][1]}</span></h2>
+ <p>{t['contact_sub']}</p>
+ <div class="row"><div class="copyrow"><a class="mail" href="mailto:hallo@benjaminherteleer.work">hallo@benjaminherteleer.work</a><button type="button" class="copybtn" data-copy="{t['copy']}" data-copied="{t['copied']}">{t['copy']}</button></div>
+ <a class="pill light" href="tel:+32494705597">+32 494 70 55 97</a><a class="pill light" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+ <footer><span>© 2026 Benjamin Herteleer</span><span>{t['footer']}</span></footer>
+</section>
 </div>'''
 
 CSS = (HERE / 'site.css').read_text(encoding='utf-8')
@@ -178,19 +190,22 @@ html = f'''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Benjamin Herteleer · marketing &amp; communicatie</title>
-<meta name="description" content="Portfolio van Benjamin Herteleer, marketeer die zelf maakt: campagnes, events, social media, merch en websites, onder meer dedollebrouwers.be.">
-<meta property="og:title" content="Benjamin Herteleer · marketing &amp; communicatie">
-<meta property="og:description" content="Marketeer die zelf maakt: campagnes, events, social media, merch en websites.">
+<title>Benjamin Herteleer · marketeer die zelf maakt</title>
+<meta name="description" content="Portfolio van Benjamin Herteleer: merk, content, web en AI. Marketeer die zelf maakt, van affiche tot website.">
+<meta property="og:title" content="Benjamin Herteleer · marketeer die zelf maakt">
+<meta property="og:description" content="Merk, content, web en AI: van de affiche tot de website.">
+<meta property="og:image" content="https://benjaminherteleer.work/img/web-ddb-home.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,800;125,900&family=Figtree:wght@400;500;600&display=swap">
 <style>
 {CSS}</style>
 </head>
 <body>
 {view('nl', T['nl'])}
 {view('en', T['en'])}
-<dialog id="lb" aria-label="Afbeelding"><form method="dialog"><button aria-label="Sluiten">×</button></form><img id="lbimg" alt=""><p id="lbcap"></p></dialog>
+<dialog id="pm" aria-labelledby="pm-t"><form method="dialog"><button class="x" aria-label="Sluiten">×</button></form>
+<div class="pm-head"><em id="pm-g"></em><h3 id="pm-t"></h3><p id="pm-p"></p><a id="pm-l" class="pill dark" target="_blank" rel="noopener"></a></div>
+<div class="pm-imgs" id="pm-i"></div></dialog>
 <script>
 {JS}</script>
 </body>

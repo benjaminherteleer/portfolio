@@ -3,213 +3,291 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Benjamin Herteleer · marketing &amp; communicatie</title>
-<meta name="description" content="Portfolio van Benjamin Herteleer, marketeer die zelf maakt: campagnes, events, social media, merch en websites, onder meer dedollebrouwers.be.">
-<meta property="og:title" content="Benjamin Herteleer · marketing &amp; communicatie">
-<meta property="og:description" content="Marketeer die zelf maakt: campagnes, events, social media, merch en websites.">
+<title>Benjamin Herteleer · marketeer die zelf maakt</title>
+<meta name="description" content="Portfolio van Benjamin Herteleer: merk, content, web en AI. Marketeer die zelf maakt, van affiche tot website.">
+<meta property="og:title" content="Benjamin Herteleer · marketeer die zelf maakt">
+<meta property="og:description" content="Merk, content, web en AI: van de affiche tot de website.">
+<meta property="og:image" content="https://benjaminherteleer.work/img/web-ddb-home.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,800;125,900&family=Figtree:wght@400;500;600&display=swap">
 <style>
 :root{
-  --bg:#F7F5F0;--surface:#FFFFFF;--ink:#16140F;--muted:#5E5A50;--line:#E2DED4;--accent:#F2B300;--paper:#EFEBE2;--on-ink:#F7F5F0;
-  --f-display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --bg:#FBFAF6;--ink:#0E0E0E;--muted:#5B5B5B;--line:#E6E6E6;--soft:#F4F3EF;--accent:#F2B300;
+  --f-display:"Archivo","Arial Black",system-ui,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--surface:#1C1A17;--ink:#F3F1EA;--muted:#A9A496;--line:#2F2C26;--accent:#F5BE1D;--paper:#E4E0D6;--on-ink:#121110;--contact-bg:#1E1C18;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121110;--surface:#1C1A17;--ink:#F3F1EA;--muted:#A9A496;--line:#2F2C26;--accent:#F5BE1D;--paper:#E4E0D6;--on-ink:#121110;--contact-bg:#1E1C18;color-scheme:dark}
-
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 [hidden]{display:none!important}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-stretch:112%;font-weight:800;margin:0;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
 p{margin:0}
-.wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+section{padding-inline:clamp(16px,4vw,56px)}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:99px;padding:8px 16px;font-family:var(--f-display);font-stretch:112%;font-weight:500;font-size:13px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.pill:hover{background:var(--ink);color:var(--bg)}
+.pill.dark{background:var(--ink);color:var(--bg)}
+.pill.dark:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.pill.big{font-size:15px;padding:14px 24px}
+.pill.light{border-color:var(--ink);color:var(--ink)}
+.pill.light:hover{background:var(--ink);color:var(--accent)}
 
 /* header */
-.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:24px;height:64px}
-.mark{font-family:var(--f-display);font-weight:800;font-size:18px;text-decoration:none;margin-right:auto}
-.top nav{display:flex;gap:22px;font-size:15px;font-weight:500}
-.top nav a{text-decoration:none;border-bottom:2px solid transparent}
-.top nav a:hover{border-color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;padding:14px clamp(16px,4vw,56px);background:rgba(251,250,246,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.logo{display:grid;place-items:center;width:44px;height:44px;background:var(--ink);color:#fff;font-family:var(--f-display);font-weight:900;font-stretch:125%;font-size:16px;text-decoration:none;letter-spacing:-.02em}
+.top nav{display:flex;gap:10px;margin-inline:auto}
 .right{display:flex;gap:10px;align-items:center}
-.langbtn{font-family:var(--f-mono);font-size:12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:6px 10px;cursor:pointer}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--on-ink);text-decoration:none;font-weight:600;font-size:16px;padding:12px 20px;border-radius:99px;border:0;cursor:pointer;white-space:nowrap}
-.btn:hover{background:var(--accent);color:#16140F}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
-.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink);background:transparent;color:var(--ink)}
-.btn.small{font-size:14px;padding:8px 14px}
+.langbtn{border:0;background:none;font-family:var(--f-display);font-weight:800;font-size:13px;cursor:pointer;padding:8px}
 
 /* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,7vw,88px) clamp(32px,5vw,56px)}
-.avail{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 12px}
-.avail i{width:8px;height:8px;border-radius:50%;background:#2FA84F;box-shadow:0 0 0 4px rgba(47,168,79,.18)}
-.eyebrow{margin-top:28px;font-weight:600;color:var(--muted)}
-.hero h1{font-size:clamp(46px,7.4vw,96px);font-weight:800;margin-top:10px}
-.intro{margin-top:24px;font-size:clamp(18px,1.9vw,21px);max-width:44ch}
-.intro strong{font-weight:600;background:linear-gradient(transparent 62%,var(--accent) 62%)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.hero-img{margin:0}
-.hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:10px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.42fr);grid-template-areas:"h side" "intro side" "cta side";gap:28px clamp(24px,4vw,64px);padding-top:clamp(32px,6vw,80px);padding-bottom:clamp(48px,7vw,96px);align-items:end}
+.hero h1{grid-area:h;font-size:clamp(42px,7vw,128px);font-stretch:125%;font-weight:900}
+.hero h1 .w{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .w>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * .12s + .1s)}
+.hero h1 .w:last-child>span{background:linear-gradient(transparent 64%,var(--accent) 64%)}
+@keyframes up{to{transform:none}}
+.intro{grid-area:intro;font-size:clamp(18px,1.7vw,22px);max-width:40ch;opacity:0;animation:fade .8s .6s forwards}
+.intro strong{font-weight:600}
+.hero .cta{grid-area:cta;display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fade .8s .75s forwards}
+@keyframes fade{to{opacity:1}}
+.hero-side{grid-area:side;align-self:center}
+.portrait{position:relative;max-width:360px;margin-left:auto;opacity:0;animation:pop .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.portrait>img:first-child{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:999px 999px 24px 24px}
+@keyframes pop{from{opacity:0;transform:scale(.92) rotate(-2deg)}to{opacity:1;transform:none}}
+.badge{position:absolute;left:-46px;bottom:-30px;width:150px;height:150px;animation:spin 18s linear infinite}
+.badge text{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:15.5px;letter-spacing:.06em;fill:var(--ink)}
+.badge circle{fill:var(--ink)}
+.badge{background:var(--accent);border-radius:50%;box-shadow:0 0 0 2px var(--ink)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sticker{position:absolute;mix-blend-mode:multiply;pointer-events:none;opacity:0;animation:fade 1s 1s forwards}
+.portrait .s1{width:clamp(80px,8vw,130px);left:-70px;top:-30px;transform:rotate(-10deg)}
+.portrait .s2{width:clamp(52px,5vw,84px);right:-34px;top:38%;transform:rotate(12deg)}
 
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
-.stat{padding:22px 20px 22px 0;display:flex;flex-direction:column;gap:2px;min-width:0}
-.stat + .stat{padding-left:20px;border-left:1px solid var(--line)}
-.stat b{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,4.4vw,52px);line-height:1;font-variant-numeric:tabular-nums}
-.stat span{font-weight:600;margin-top:6px}
-.stat small{font-size:14px;color:var(--muted)}
+/* marquee */
+.marquee{border-block:1.5px solid var(--ink);overflow:hidden;padding:18px 0;background:var(--accent)}
+.track{display:flex;width:max-content;align-items:center;gap:28px;animation:scroll 32s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font-family:var(--f-display);font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(40px,6vw,88px);line-height:1;letter-spacing:-.02em}
+.track span:nth-of-type(even){color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.track i{font-style:normal;font-size:clamp(28px,4vw,56px);color:var(--ink)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
 /* sections */
-.block{padding-top:clamp(64px,9vw,112px)}
-.sec{font-size:clamp(32px,4.4vw,52px);font-weight:800;margin-bottom:28px}
-.sec-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 48px;align-items:end;margin-bottom:28px}
-.sec-row .sec{margin:0}
-.sec-row p{color:var(--muted);max-width:52ch}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.work,.dos,.about{padding-top:clamp(72px,10vw,140px)}
+.work h2,.dos h2,.about h2{font-size:clamp(48px,8vw,120px);font-stretch:125%;font-weight:900}
+.sec-head p{color:var(--muted);max-width:36ch}
 
-.dos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.do{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
-.num{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
-.do h3{font-size:20px;font-weight:800;margin:14px 0 8px}
-.do p{font-size:15px;color:var(--muted)}
+/* project grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.card{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card.wide{grid-column:span 2}
+.card .frame{display:block;overflow:hidden;border-radius:20px;background:var(--soft);position:relative}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.card.wide .frame{aspect-ratio:16/10}
+.card.tall .frame{aspect-ratio:4/5}
+.card:hover img{transform:scale(1.05)}
+.card:focus-visible .frame{outline:3px solid var(--accent);outline-offset:3px}
+.card .meta{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px}
+.card .meta b{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:clamp(20px,2vw,28px);text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.card .meta em{grid-column:1;font-style:normal;color:var(--muted);font-size:14px}
+.card .go{grid-row:1/3;grid-column:2;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:20px;transition:background .2s,color .2s,transform .3s}
+.card:hover .go{background:var(--ink);color:#fff;transform:rotate(45deg)}
 
-/* cases */
-.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,36px);margin-bottom:20px}
-.case-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,56px)}
-.kicker{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px}
-.kicker span{color:var(--ink)}
-.case h3{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-top:12px}
-.sum{margin-top:10px;font-size:18px}
-.case .btn{margin-top:22px}
-.qar{margin:0;display:grid;gap:14px}
-.qar div{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.qar div:last-child{border-bottom:0;padding-bottom:0}
-.qar dt{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:4px}
-.qar dd{margin:0}
-.qar .res dd{padding-left:14px;border-left:3px solid var(--accent)}
-.qar b{font-family:var(--f-display);font-weight:800}
-.media{display:grid;gap:12px;margin-top:clamp(20px,3vw,32px)}
-.media.row{grid-template-columns:repeat(4,minmax(0,1fr))}
-.media.web{grid-template-columns:repeat(2,minmax(0,1fr))}
-.shot{border:0;padding:0;margin:0;background:none;cursor:zoom-in;border-radius:8px;overflow:hidden;display:block;width:100%}
-.shot img{width:100%;height:100%;transition:transform .3s}
-.shot:hover img{transform:scale(1.03)}
-.media.row .shot{aspect-ratio:4/5}
-.media.web .shot{aspect-ratio:16/10;border:1px solid var(--line)}
-.shot.cover img{object-fit:cover}
-.shot.contain{background:var(--paper);padding:14px}
-.shot.contain img{object-fit:contain;mix-blend-mode:multiply}
-.credit{font-size:13px;color:var(--muted);margin-top:10px}
+.card.more .frame{background:var(--accent);display:flex;align-items:flex-end;aspect-ratio:4/5}
+.more-in{display:grid;gap:12px;padding:clamp(20px,2.5vw,36px)}
+.more-in b{font-family:var(--f-display);font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(28px,3vw,44px);line-height:.95}
+.more-in .go{width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--accent);display:grid;place-items:center;font-size:22px;transition:transform .3s}
+.card.more:hover .go{transform:translateX(6px)}
+/* what I do */
+.dos ul{list-style:none;margin:28px 0 0;padding:0;border-top:1.5px solid var(--ink)}
+.dos li{position:relative;display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1fr) 40px;gap:20px;align-items:center;padding:26px 16px;border-bottom:1.5px solid var(--ink);transition:background .3s,color .3s}
+.dos li:hover{background:var(--accent);color:var(--ink)}
+.dos .n{font-family:var(--f-display);font-weight:500;font-size:14px}
+.dos h3{font-size:clamp(28px,4vw,56px);font-stretch:125%;font-weight:900}
+.dos li p{color:inherit;opacity:.75}
+.dos .arr{font-size:26px;transition:transform .3s}
+.dos li:hover .arr{transform:translateX(6px)}
 
-.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.more-card .shot{aspect-ratio:4/3;margin-bottom:14px}
-.more-card h3{font-size:20px;font-weight:800;margin-bottom:6px}
-.more-card p{font-size:15px;color:var(--muted)}
-.more-card a{display:inline-block;margin-top:8px;font-weight:600;font-size:15px}
+/* AI block */
+.ai{padding-top:clamp(72px,10vw,140px)}
+.ai-in{position:relative;background:var(--ink);color:#fff;border-radius:28px;padding:clamp(32px,6vw,88px);overflow:hidden}
+.ai h2{max-width:85%;font-size:clamp(40px,6.6vw,108px);font-stretch:125%;font-weight:900;color:#fff}
+.ai p{margin-top:24px;font-size:clamp(18px,1.8vw,24px);max-width:46ch;color:#DADADA}
+.spark{position:absolute;right:clamp(20px,5vw,72px);top:clamp(16px,4vw,48px);font-size:clamp(60px,9vw,140px);color:var(--accent);animation:spin 14s linear infinite;line-height:1}
 
 /* about */
-.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
-.about-text{font-size:18px}
-.extra{margin-top:18px;font-family:var(--f-mono);font-size:13px;color:var(--muted)}
-.cv-col h3{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
-.tl{list-style:none;margin:0 0 32px;padding:0;border-top:1px solid var(--line)}
-.tl li{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.when{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:3px}
-.tl b{display:block;font-weight:600}
-.org{display:block;color:var(--muted);font-size:15px}
-.tl p{font-size:15px;margin-top:6px}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.facts p{font-size:15px}
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.lead{margin-top:24px;font-size:clamp(18px,1.6vw,21px);max-width:44ch}
+.facts{margin-top:24px;display:grid;gap:6px;color:var(--muted);font-size:15px}
+.about .cta{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+.tl{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink);margin-top:clamp(0px,5vw,96px)}
+.tl li{display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.tl span{grid-row:1/3;font-family:var(--f-display);font-weight:500;font-size:13px;color:var(--muted);padding-top:4px}
+.tl b{font-weight:600}
+.tl em{font-style:normal;color:var(--muted);font-size:15px}
 
 /* contact */
-.contact{background:var(--contact-bg,#16140F);color:#F3F1EA;margin-top:clamp(72px,10vw,128px);padding-top:clamp(56px,8vw,96px)}
-.contact h2{font-size:clamp(48px,8vw,104px);font-weight:800}
-.contact-sub{margin-top:16px;font-size:19px;max-width:48ch;color:#CFCABD}
-.contact-row{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:36px;font-weight:600}
+.contact{position:relative;margin-top:clamp(80px,11vw,160px);background:var(--accent);color:var(--ink);padding-top:clamp(64px,9vw,128px)}
+.contact h2{font-size:clamp(64px,14vw,230px);font-stretch:125%;font-weight:900;color:var(--ink)}
+.contact h2 span{display:block}
+.contact h2 span:last-child{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.contact>p{margin-top:24px;font-size:clamp(18px,1.6vw,22px);max-width:44ch}
+.talk{position:absolute;right:clamp(20px,6vw,100px);bottom:clamp(150px,15vw,220px);background:var(--ink);color:var(--accent);font-family:var(--f-display);font-weight:900;font-stretch:112%;text-transform:uppercase;font-size:clamp(16px,1.8vw,24px);padding:18px 22px;border-radius:50%;aspect-ratio:1;display:grid;place-items:center;text-align:center;width:clamp(110px,12vw,170px);transform:rotate(-12deg);animation:wobble 3s ease-in-out infinite}
+@keyframes wobble{50%{transform:rotate(-4deg) scale(1.05)}}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;margin-top:36px}
 .copyrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.copyrow code{font-family:var(--f-mono);font-size:15px;background:#26231E;padding:9px 13px;border-radius:8px;user-select:all;word-break:break-all}
-.copybtn{font-family:var(--f-body);font-size:14px;font-weight:600;border:1px solid #F3F1EA;background:transparent;color:#F3F1EA;padding:8px 14px;border-radius:99px;cursor:pointer}
-.contact footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:clamp(56px,8vw,96px);padding-block:24px 32px;border-top:1px solid #2F2C26;font-size:14px;color:#A9A496}
+.mail{font-family:var(--f-display);font-weight:800;font-stretch:112%;font-size:clamp(18px,2.4vw,32px);text-decoration:none;border-bottom:3px solid var(--ink)}
+.copybtn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:99px;padding:6px 14px;font-size:13px;cursor:pointer}
+.contact footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:clamp(64px,9vw,128px);padding:24px 0 32px;border-top:1.5px solid var(--ink);font-size:14px}
 
-/* lightbox */
-dialog{border:0;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh}
-dialog::backdrop{background:rgba(10,9,7,.9)}
-dialog img{max-height:84vh;width:auto;margin:0 auto;border-radius:6px}
-dialog p{color:#F3F1EA;text-align:center;margin-top:10px;font-size:15px}
-dialog form{position:absolute;top:8px;right:8px}
-dialog form button{background:#F3F1EA;color:#16140F;border:0;border-radius:99px;width:36px;height:36px;font-size:20px;cursor:pointer}
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.grid .card:nth-child(3n+2){transition-delay:.08s}
+.grid .card:nth-child(3n){transition-delay:.16s}
 
-@media (max-width:960px){
-  .dos{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .case-head,.about,.sec-row{grid-template-columns:minmax(0,1fr)}
-  .media.row{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* project dialog */
+#pm{border:0;padding:0;width:min(1100px,94vw);max-height:92vh;border-radius:24px;overflow:auto;background:#fff;color:var(--ink)}
+#pm::backdrop{background:rgba(10,10,10,.7);backdrop-filter:blur(4px)}
+#pm[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+#pm form{position:sticky;top:0;display:flex;justify-content:flex-end;padding:14px 14px 0;z-index:2}
+.x{width:44px;height:44px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:24px;cursor:pointer}
+.pm-head{padding:0 clamp(20px,4vw,48px) 24px;display:grid;gap:14px;justify-items:start}
+.pm-head em{font-style:normal;color:var(--muted);font-size:14px}
+.pm-head h3{font-size:clamp(36px,6vw,80px);font-stretch:125%;font-weight:900}
+.pm-head p{max-width:60ch;font-size:18px}
+.pm-imgs{columns:2 320px;column-gap:14px;padding:0 clamp(20px,4vw,48px) clamp(20px,4vw,48px)}
+.pm-imgs img{width:100%;border-radius:14px;margin-bottom:14px;break-inside:avoid;background:var(--soft)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"side" "h" "intro" "cta"}
+  .portrait{max-width:220px;margin:0}
+  .badge{left:auto;right:-40px;bottom:-20px;width:110px;height:110px}
+  .portrait .s1{left:-40px;top:-20px;width:80px}
+  .portrait .s2{right:-24px;width:56px}
+  .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .about{grid-template-columns:minmax(0,1fr)}
+  .tl{margin-top:0}
+  .dos li{grid-template-columns:44px minmax(0,1fr) 28px}
+  .dos li p{grid-column:2}
+  .dos .arr{grid-row:1;grid-column:3}
 }
-@media (max-width:760px){
+@media (max-width:620px){
   .top nav{display:none}
-  .hero{grid-template-columns:minmax(0,1fr)}
-  .hero-img{order:-1;max-width:220px}
-  .stats{grid-template-columns:minmax(0,1fr)}
-  .stat + .stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}
-  .more{grid-template-columns:minmax(0,1fr)}
-  .media.web{grid-template-columns:minmax(0,1fr)}
-  .qar div{grid-template-columns:minmax(0,1fr);gap:4px}
-  .tl li{grid-template-columns:minmax(0,1fr);gap:2px}
-  .facts{grid-template-columns:minmax(0,1fr)}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .card.wide{grid-column:auto}
+  .card.wide .frame,.card.tall .frame{aspect-ratio:4/3}
+  .talk{position:static;margin-bottom:24px}
 }
-@media (max-width:420px){
-  .dos{grid-template-columns:minmax(0,1fr)}
-  .btn.small{display:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w>span,.intro,.hero .cta,.portrait,.sticker{opacity:1;transform:none}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <div class="lang" id="lang-nl" lang="nl">
-<header class="top"><div class="wrap bar"><a class="mark" href="#top">Benjamin Herteleer</a><nav aria-label="Menu"><a href="#werk">Werk</a><a href="#over">Over mij</a><a href="#contact">Contact</a></nav><div class="right"><a class="btn small" href="cv-benjamin-herteleer.pdf" target="_blank" rel="noopener">Download cv</a><button class="langbtn" type="button" data-set="en">EN</button></div></div></header>
-<main class="wrap">
-<section class="hero" id="top"><div class="hero-copy"><p class="avail"><i></i>Op zoek naar een nieuwe job in marketing, communicatie of events</p><p class="eyebrow">Benjamin Herteleer · marketing &amp; communicatie</p><h1>Marketeer die zelf maakt.</h1><p class="intro">Sinds 2021 doe ik de volledige marketing van <strong>De Dolle Brouwers</strong>, een Belgische ambachtelijke brouwerij: van campagne en content tot event, merch en website. Ik bedenk het idee en maak het ook. Nu zoek ik een nieuwe uitdaging.</p>
-<div class="cta"><a class="btn" href="#werk">Bekijk mijn werk</a><a class="btn ghost" href="cv-benjamin-herteleer.pdf" target="_blank" rel="noopener">Download cv ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
-<figure class="hero-img"><img src="img/me.webp" alt="Portret van Benjamin Herteleer" width="506" height="1100"></figure></section>
-<div class="stats"><div class="stat"><b>500+</b><span>tickets verkocht</span><small>Dolle Vrijdag, twee edities</small></div><div class="stat"><b>1.000+</b><span>bezoekers op events</span><small>die ik mee organiseerde en promootte</small></div><div class="stat"><b>36.500+</b><span>views op reels</span><small>mijn acht best bekeken reels</small></div></div>
-<section class="block"><h2 class="sec">Wat ik doe</h2><div class="dos"><div class="do"><span class="num">01</span><h3>Campagnes &amp; events</h3><p>Van idee tot uitvoering: concept, planning, promotie en ticketverkoop.</p></div><div class="do"><span class="num">02</span><h3>Social media &amp; content</h3><p>Instagram, Facebook en TikTok in het Nederlands en Engels. Foto, video, copy en Meta Ads.</p></div><div class="do"><span class="num">03</span><h3>Design &amp; merch</h3><p>Huisstijl, affiches, drukwerk en merch, tot en met de drukproef.</p></div><div class="do"><span class="num">04</span><h3>Web &amp; AI</h3><p>Websites van structuur en copy tot design en code. AI-enthousiast: ik werk dagelijks met Claude.</p></div></div></section>
-<section class="block" id="werk"><div class="sec-row"><h2 class="sec">Geselecteerd werk</h2><p>Vier projecten, telkens met de opdracht, mijn aanpak en wat het opleverde.</p></div><article class="case"><div class="case-head"><div><p class="kicker"><span>01</span>Event · 2025–2026</p><h3>Dolle Vrijdag</h3><p class="sum">Een nieuw avondevent in de brouwerij, gebouwd als eigen merk.</p></div><dl class="qar"><div><dt>Opdracht</dt><dd>Een jonger publiek naar De Dolle halen, mensen die de brouwerij nog niet kenden.</dd></div><div><dt>Aanpak</dt><dd>Naam, logo, affiches, shirts en een eigen Instagram-account, met online ticketverkoop. Na elke editie keek ik welke posts tickets verkochten en stuurde ik bij.</dd></div><div class="res"><dt>Resultaat</dt><dd><b>500+ tickets</b> over twee edities, met een publiek dat voordien niet naar de brouwerij kwam.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/ph-dv-crowd.webp" data-cap="Publiek op Dolle Vrijdag"><img src="img/ph-dv-crowd.webp" alt="Publiek op Dolle Vrijdag" width="1100" height="733" loading="lazy"></button><button class="shot contain" type="button" data-full="img/ev-dv-poster.webp" data-cap="Affiche Terraseditie 2026"><img src="img/ev-dv-poster.webp" alt="Affiche Terraseditie 2026" width="834" height="1100" loading="lazy"></button><button class="shot contain" type="button" data-full="img/ev-dv-logo.webp" data-cap="Logo Dolle Vrijdag"><img src="img/ev-dv-logo.webp" alt="Logo Dolle Vrijdag" width="964" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-dv-team.webp" data-cap="Het team in de Dolle Vrijdag-shirts"><img src="img/ph-dv-team.webp" alt="Het team in de Dolle Vrijdag-shirts" width="733" height="1100" loading="lazy"></button></div><p class="credit">Foto's: @howmie.be</p></article><article class="case"><div class="case-head"><div><p class="kicker"><span>02</span>Website · 2026</p><h3>dedollebrouwers.be</h3><p class="sum">De nieuwe website van de brouwerij, volledig zelf ontwikkeld.</p><a class="btn" href="https://www.dedollebrouwers.be" target="_blank" rel="noopener">Bezoek de site ↗</a></div><dl class="qar"><div><dt>Opdracht</dt><dd>Een verouderde site vervangen door één die klinkt en eruitziet als het merk, in twee talen.</dd></div><div><dt>Aanpak</dt><dd>Structuur, alle copy in het Nederlands en Engels, design en ontwikkeling. Met een pagina per bier, webshop, rondleidingen boeken, een verkooppuntenkaart en een maandelijkse nieuwspagina.</dd></div><div class="res"><dt>Resultaat</dt><dd><b>Live</b> op dedollebrouwers.be: één plek voor bezoekers, bierfans en verkooppunten, in het Nederlands en Engels.</dd></div></dl></div><div class="media web"><button class="shot cover" type="button" data-full="img/web-ddb-home.webp" data-cap="Homepagina"><img src="img/web-ddb-home.webp" alt="Homepagina" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-beer.webp" data-cap="Bierpagina Oerbier"><img src="img/web-ddb-beer.webp" alt="Bierpagina Oerbier" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-nieuws.webp" data-cap="Oerbier Fake Nieuws"><img src="img/web-ddb-nieuws.webp" alt="Oerbier Fake Nieuws" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-shop.webp" data-cap="Oershop"><img src="img/web-ddb-shop.webp" alt="Oershop" width="1200" height="750" loading="lazy"></button></div></article><article class="case"><div class="case-head"><div><p class="kicker"><span>03</span>Merch</p><h3>Merchcollectie</h3><p class="sum">Shirts, hoodies en sweaters, plus het Oeral-glas.</p></div><dl class="qar"><div><dt>Opdracht</dt><dd>Fans vroegen al vier jaar naar de sweaters. Tijd voor een collectie die past bij het merk.</dd></div><div><dt>Aanpak</dt><dd>Ontwerpen met de figuren van de brouwerij, drukbestanden, afstemming met drukkers en drukproeven, een fotoshoot en de online lancering.</dd></div><div class="res"><dt>Resultaat</dt><dd><b>Een volledige collectie</b>, gelanceerd op social media en te koop in de Oershop op de nieuwe website.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/ph-merch-hoodie.webp" data-cap="Hoodie met rugprint"><img src="img/ph-merch-hoodie.webp" alt="Hoodie met rugprint" width="880" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-merch-rack.webp" data-cap="Hoodie en sweater"><img src="img/ph-merch-rack.webp" alt="Hoodie en sweater" width="880" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-black-front.webp" data-cap="Het zwarte shirt"><img src="img/ph-black-front.webp" alt="Het zwarte shirt" width="880" height="1100" loading="lazy"></button><button class="shot contain" type="button" data-full="img/oe-glass.webp" data-cap="Het Oeral-glas"><img src="img/oe-glass.webp" alt="Het Oeral-glas" width="690" height="1038" loading="lazy"></button></div><p class="credit">Productfoto's: carolleservaygephotography</p></article><article class="case"><div class="case-head"><div><p class="kicker"><span>04</span>Social media &amp; content</p><h3>Het brouwjaar online</h3><p class="sum">Instagram, Facebook en TikTok, het hele jaar door.</p></div><dl class="qar"><div><dt>Opdracht</dt><dd>De brouwerij het hele jaar zichtbaar houden, in het Nederlands en Engels, voor fans in binnen- en buitenland.</dd></div><div><dt>Aanpak</dt><dd>Content volgens het brouwjaar, van Boskeun met Pasen tot Stille Nacht in december. Foto, video, copy en eigen illustraties. Ik volg op welke posts bereik halen en welke verkopen.</dd></div><div class="res"><dt>Resultaat</dt><dd><b>36.500+ views</b> op mijn acht best bekeken reels. De zelfgetekende carrousel "Brewed the Dolle way" haalde <b>440+ likes in 18 uur</b>.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/brew-01.webp" data-cap="Carrousel Brewed the Dolle way"><img src="img/brew-01.webp" alt="Carrousel Brewed the Dolle way" width="960" height="1200" loading="lazy"></button><button class="shot cover" type="button" data-full="img/stillenacht-illu.webp" data-cap="Stille Nacht, eigen illustratie"><img src="img/stillenacht-illu.webp" alt="Stille Nacht, eigen illustratie" width="797" height="1065" loading="lazy"></button><button class="shot cover" type="button" data-full="img/reserva.webp" data-cap="Oerbier Reserva"><img src="img/reserva.webp" alt="Oerbier Reserva" width="797" height="850" loading="lazy"></button><button class="shot cover" type="button" data-full="img/xmas-card.webp" data-cap="Kerstkaart, eigen illustratie"><img src="img/xmas-card.webp" alt="Kerstkaart, eigen illustratie" width="797" height="799" loading="lazy"></button></div></article></section>
-<section class="block"><h2 class="sec">Meer werk</h2><div class="more"><div class="more-card"><button class="shot cover" type="button" data-full="img/site-home.webp" data-cap="krisherteleer.com"><img src="img/site-home.webp" alt="krisherteleer.com" width="800" height="499" loading="lazy"></button><h3>krisherteleer.com</h3><p>Online galerij voor honderden werken van kunstenaar Kris Herteleer, met 8 collecties en een interactieve kaart.</p><a href="https://www.krisherteleer.com" target="_blank" rel="noopener">Bekijk de site ↗</a></div><div class="more-card"><button class="shot contain" type="button" data-full="img/ev-zv-a6.webp" data-cap="Zomerse Vrijdagen &amp; Comedy Brewery"><img src="img/ev-zv-a6.webp" alt="Zomerse Vrijdagen &amp; Comedy Brewery" width="993" height="1400" loading="lazy"></button><h3>Zomerse Vrijdagen &amp; Comedy Brewery</h3><p>Illustratie, flyers, affiches en promotie voor andere events in de brouwerij.</p></div><div class="more-card"><button class="shot contain" type="button" data-full="img/d-crew.webp" data-cap="Illustratie"><img src="img/d-crew.webp" alt="Illustratie" width="1054" height="1010" loading="lazy"></button><h3>Illustratie</h3><p>Eigen tekeningen met de figuren van de brouwerij, voor posts, kaarten en shirts.</p></div></div></section>
-<section class="block about" id="over"><div><h2 class="sec">Over mij</h2><p class="about-text">Ik werk het liefst waar een idee snel zichtbaar wordt: een campagne bedenken, de affiche ontwerpen, de posts schrijven, de site bouwen en mee op het event staan. Ik studeerde Communicatie &amp; Digitale Marketing aan de Arteveldehogeschool en liep stage in Lissabon. Nu zoek ik een rol in marketing, communicatie of events, bij een merk, cultuurhuis of organisatie met een eigen verhaal.</p><p class="extra">Rijbewijs B · bereid om te verhuizen</p></div>
-<div class="cv-col"><h3>Ervaring</h3><ul class="tl"><li><span class="when">2021 – nu</span><div><b>Marketing &amp; communicatie</b><span class="org">De Dolle Brouwers, Esen</span><p>Volledige marketing: campagnes, social media en Meta Ads, events, merch en de website. Tijdens mijn studie als jobstudent, sinds 2025 vast. In de brouwerij sinds 2017.</p></div></li><li><span class="when">2024 – 2025</span><div><b>Marketing &amp; sales intern</b><span class="org">Lisbon Boat Party, Lissabon</span><p>Social media, Meta Ads, en SEO en SEA op GetYourGuide, Viator, Klook en Shotgun.</p></div></li></ul><h3>Opleiding</h3><ul class="tl"><li><span class="when">2021 – 2025</span><div><b>Bachelor Communicatie &amp; Digitale Marketing</b><span class="org">Arteveldehogeschool Gent</span><p>Afgestudeerd met onderscheiding.</p></div></li></ul>
-<div class="facts"><div><h3>Tools</h3><p>Illustrator, Photoshop, InDesign, Procreate, Canva, Meta Business Suite en Ads Manager, Shopify, Astro, Claude en andere AI-tools</p></div><div><h3>Talen</h3><p>Nederlands (moedertaal), Engels (zeer goed), Frans (goed)</p></div></div></div></section>
-</main>
-<section class="contact" id="contact"><div class="wrap"><h2>Laten we praten.</h2><p class="contact-sub">Zoek je iemand die een campagne kan bedenken én maken? Stuur me een mail of bel me gerust.</p>
-<div class="contact-row"><div class="copyrow"><code class="mail">hallo@benjaminherteleer.work</code><button type="button" class="copybtn" data-copy="Kopieer" data-copied="Gekopieerd">Kopieer</button></div>
-<a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a><a href="cv-benjamin-herteleer.pdf" target="_blank" rel="noopener">Download cv ↗</a></div>
-<footer><span>© 2026 Benjamin Herteleer</span><span>Zelf geschreven, ontworpen en gebouwd.</span></footer></div></section>
+<header class="top"><a class="logo" href="#top" aria-label="Benjamin Herteleer">BH</a><nav aria-label="Menu"><a class="pill" href="#werk">Werk</a><a class="pill" href="#over">Over</a><a class="pill" href="#contact">Contact</a></nav>
+<div class="right"><a class="pill dark" href="cv-benjamin-herteleer.pdf" target="_blank" rel="noopener">Cv ↗</a><button class="langbtn" type="button" data-set="en">EN</button></div></header>
+
+<section class="hero" id="top">
+ <h1><span class="w" style="--i:0"><span>Marketeer</span></span><span class="w" style="--i:1"><span>die zelf</span></span><span class="w" style="--i:2"><span>maakt.</span></span></h1>
+ <div class="hero-side">
+  <div class="portrait"><img class="" src="img/me.webp" alt="Benjamin Herteleer" width="506" height="1100"><svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#c">OPEN VOOR EEN NIEUWE JOB · AI-ENTHOUSIAST · OPEN VOOR EEN NIEUWE JOB · AI-ENTHOUSIAST · </textPath></text><circle cx="100" cy="100" r="30"/></svg><img class="sticker s1" src="img/d-crew.webp" alt="" width="1054" height="1010"><img class="sticker s2" src="img/ev-dv-logo.webp" alt="" width="964" height="1100"></div>
+ </div>
+ <p class="intro">Ik ben Benjamin. Ik bedenk merken, campagnes en content, en ik maak ze ook: van de affiche tot de website. Sinds 2021 doe ik dat voor <strong>De Dolle Brouwers</strong>, nu zoek ik een nieuw team.</p>
+ <div class="cta"><a class="pill big dark" href="#werk">Bekijk mijn werk →</a><a class="pill big" href="#contact">Laten we praten</a></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track"><span>Branding</span><i>✱</i><span>Content</span><i>✱</i><span>Web</span><i>✱</i><span>Illustratie</span><i>✱</i><span>AI</span><i>✱</i><span>Social</span><i>✱</i><span>Merch</span><i>✱</i><span>Branding</span><i>✱</i><span>Content</span><i>✱</i><span>Web</span><i>✱</i><span>Illustratie</span><i>✱</i><span>AI</span><i>✱</i><span>Social</span><i>✱</i><span>Merch</span><i>✱</i></div></div>
+
+<section class="work" id="werk">
+ <div class="sec-head reveal"><h2>Werk</h2><p>Een greep uit wat ik maakte. Klik op een project voor meer.</p></div>
+ <div class="grid"><button class="card wide reveal" type="button" data-project='{"t": "dedollebrouwers.be", "g": "Web · Copy · Design · AI", "p": "De nieuwe website van de brouwerij, van structuur en tweetalige teksten tot design en code. Met een pagina per bier, een webshop, rondleidingen boeken, een kaart met verkooppunten en een maandelijkse krant. Gebouwd met Claude: ik bedacht, schreef en stuurde bij, AI bouwde mee.", "l": "https://www.dedollebrouwers.be", "v": "Bezoek de site", "i": [["img/web-ddb-home.webp", 1200, 750], ["img/web-ddb-beer.webp", 1200, 750], ["img/web-ddb-nieuws.webp", 1200, 750], ["img/web-ddb-shop.webp", 1200, 750]]}' aria-label="Bekijk project: dedollebrouwers.be"><span class="frame"><img class="" src="img/web-ddb-home.webp" alt="dedollebrouwers.be" width="1200" height="750" loading="lazy"></span><span class="meta"><b>dedollebrouwers.be</b><em>Web · Copy · Design · AI</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Brewed the Dolle way", "g": "Illustratie · Social", "p": "Twaalf zelfgetekende slides die het brouwproces uitleggen, met de Oerbier-mannetjes in de hoofdrol. De tekeningen kregen daarna een tweede leven als shirt en als pagina op de nieuwe website.", "l": null, "v": "Bezoek de site", "i": [["img/brew-01.webp", 960, 1200], ["img/brew-02.webp", 960, 1200], ["img/brew-03.webp", 960, 1200], ["img/brew-04.webp", 960, 1200], ["img/brew-05.webp", 960, 1200], ["img/brew-07.webp", 960, 1200], ["img/brew-09.webp", 960, 1200], ["img/brew-10.webp", 960, 1200], ["img/brew-12.webp", 960, 1200]]}' aria-label="Bekijk project: Brewed the Dolle way"><span class="frame"><img class="" src="img/brew-01.webp" alt="Brewed the Dolle way" width="960" height="1200" loading="lazy"></span><span class="meta"><b>Brewed the Dolle way</b><em>Illustratie · Social</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Merch", "g": "Design · Productie", "p": "Shirts, hoodies, sweaters en het Oeral-glas. Van ontwerp en drukbestand tot drukproef, fotoshoot en lancering. Fans vroegen al jaren naar de sweaters, nu zijn ze er.", "l": null, "v": "Bezoek de site", "i": [["img/ph-merch-hoodie.webp", 880, 1100], ["img/ph-merch-rack.webp", 880, 1100], ["img/ph-black-front.webp", 880, 1100], ["img/ph-black-back.webp", 880, 1100], ["img/ph-merch-sweater.webp", 880, 1100], ["img/d-crew.webp", 1054, 1010], ["img/d-brewing.webp", 746, 1100], ["img/oe-glass.webp", 690, 1038]]}' aria-label="Bekijk project: Merch"><span class="frame"><img class="" src="img/ph-merch-hoodie.webp" alt="Merch" width="880" height="1100" loading="lazy"></span><span class="meta"><b>Merch</b><em>Design · Productie</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Social &amp; illustratie", "g": "Content · Illustratie", "p": "Het brouwjaar online, van Boskeun met Pasen tot Stille Nacht in december. Eigen foto&#39;s, video en illustraties waarin de figuren van de brouwerij nieuwe scènes beleven, in het Nederlands en Engels.", "l": null, "v": "Bezoek de site", "i": [["img/stillenacht-illu.webp", 797, 1065], ["img/xmas-card.webp", 797, 799], ["img/boskeun-illu.webp", 797, 978], ["img/valentine.webp", 797, 799], ["img/reserva.webp", 797, 850], ["img/lichtervelds.webp", 797, 999], ["img/stout.webp", 797, 1022], ["img/signs45.webp", 797, 1002]]}' aria-label="Bekijk project: Social &amp; illustratie"><span class="frame"><img class="" src="img/stillenacht-illu.webp" alt="Social &amp; illustratie" width="797" height="1065" loading="lazy"></span><span class="meta"><b>Social &amp; illustratie</b><em>Content · Illustratie</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Dolle Vrijdag", "g": "Event · Branding", "p": "Een avondfeest in de brouwerij, gebouwd als eigen merk om een jonger publiek binnen te halen: naam, logo met een discobal-mannetje, affiches, shirts en een eigen Instagram.", "l": null, "v": "Bezoek de site", "i": [["img/ph-dv-crowd.webp", 1100, 733], ["img/ev-dv-poster.webp", 834, 1100], ["img/ev-dv-logo.webp", 964, 1100], ["img/d-dv.webp", 860, 1100], ["img/ph-dv-team.webp", 733, 1100]]}' aria-label="Bekijk project: Dolle Vrijdag"><span class="frame"><img class="" src="img/ev-dv-poster.webp" alt="Dolle Vrijdag" width="834" height="1100" loading="lazy"></span><span class="meta"><b>Dolle Vrijdag</b><em>Event · Branding</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card wide reveal" type="button" data-project='{"t": "krisherteleer.com", "g": "Web · Design", "p": "Een online galerij voor honderden werken van kunstenaar Kris Herteleer, met acht collecties, een interactieve kaart en een handtekening die zichzelf tekent.", "l": "https://www.krisherteleer.com", "v": "Bezoek de site", "i": [["img/site-home.webp", 800, 499], ["img/site-collections.webp", 800, 499]]}' aria-label="Bekijk project: krisherteleer.com"><span class="frame"><img class="" src="img/site-home.webp" alt="krisherteleer.com" width="800" height="499" loading="lazy"></span><span class="meta"><b>krisherteleer.com</b><em>Web · Design</em><span class="go" aria-hidden="true">↗</span></span></button><a class="card tall more reveal" href="#contact"><span class="frame"><span class="more-in"><b>Benieuwd naar meer?</b><span>Ik vertel graag het hele verhaal achter elk project.</span><span class="go" aria-hidden="true">→</span></span></span></a></div>
+</section>
+
+<section class="dos">
+ <h2 class="reveal">Wat ik doe</h2>
+ <ul><li class="reveal"><span class="n">01</span><h3>Merk &amp; design</h3><p>Huisstijlen, logo's, affiches en merch die je herkent van ver.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">02</span><h3>Content &amp; social</h3><p>Foto, video, copy en illustraties, in het Nederlands en Engels.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">03</span><h3>Web</h3><p>Sites van structuur en teksten tot design en code.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">04</span><h3>AI</h3><p>Ik werk elke dag met Claude: sneller maken, zonder dat het naar AI ruikt.</p><span class="arr" aria-hidden="true">→</span></li></ul>
+</section>
+
+<section class="ai">
+ <div class="ai-in reveal"><span class="spark" aria-hidden="true">✦</span><h2>Gebouwd met AI.</h2><p>Deze site, mijn cv en dedollebrouwers.be heb ik gemaakt met Claude. Ik bedenk het idee en bewaak de smaak, AI bouwt mee. Zo maak ik in weken wat vroeger een bureau en maanden vroeg.</p></div>
+</section>
+
+<section class="about" id="over">
+ <div class="reveal"><h2>Over mij</h2><p class="lead">Ik groeide op in een brouwerij, studeerde Communicatie &amp; Digitale Marketing aan de Arteveldehogeschool en liep stage in Lissabon. Ik werk het liefst in een jong team, waar een idee snel zichtbaar wordt. Rijbewijs B, en bereid om te verhuizen.</p>
+ <div class="facts"><p>Illustrator · Photoshop · InDesign · Procreate · Canva · Meta Ads · Shopify · Astro · Claude</p><p>Nederlands · Engels · Frans</p></div>
+ <div class="cta"><a class="pill dark" href="cv-benjamin-herteleer.pdf" target="_blank" rel="noopener">Cv ↗</a><a class="pill" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+ <ul class="tl reveal"><li><span>2021 – nu</span><b>Marketing &amp; communicatie</b><em>De Dolle Brouwers · jobstudent, vast sinds 2025</em></li><li><span>2024 – 2025</span><b>Marketing &amp; sales intern</b><em>Lisbon Boat Party, Lissabon</em></li><li><span>2021 – 2025</span><b>Bachelor Communicatie &amp; Digitale Marketing</b><em>Arteveldehogeschool Gent · met onderscheiding</em></li></ul>
+</section>
+
+<section class="contact" id="contact">
+ <span class="talk" aria-hidden="true">Let's talk!</span>
+ <h2><span>Laten we</span><span>praten.</span></h2>
+ <p>Zoek je iemand die een idee kan bedenken én maken? Stuur me een mail.</p>
+ <div class="row"><div class="copyrow"><a class="mail" href="mailto:hallo@benjaminherteleer.work">hallo@benjaminherteleer.work</a><button type="button" class="copybtn" data-copy="Kopieer" data-copied="Gekopieerd">Kopieer</button></div>
+ <a class="pill light" href="tel:+32494705597">+32 494 70 55 97</a><a class="pill light" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+ <footer><span>© 2026 Benjamin Herteleer</span><span>Zelf ontworpen en gebouwd, met Claude.</span></footer>
+</section>
 </div>
 <div class="lang" id="lang-en" lang="en" hidden>
-<header class="top"><div class="wrap bar"><a class="mark" href="#top-en">Benjamin Herteleer</a><nav aria-label="Menu"><a href="#werk-en">Work</a><a href="#over-en">About</a><a href="#contact-en">Contact</a></nav><div class="right"><a class="btn small" href="cv-benjamin-herteleer-en.pdf" target="_blank" rel="noopener">Download CV</a><button class="langbtn" type="button" data-set="nl">NL</button></div></div></header>
-<main class="wrap">
-<section class="hero" id="top-en"><div class="hero-copy"><p class="avail"><i></i>Looking for a new role in marketing, communications or events</p><p class="eyebrow">Benjamin Herteleer · marketing &amp; communications</p><h1>A marketer who makes things.</h1><p class="intro">Since 2021 I have run all marketing for <strong>De Dolle Brouwers</strong>, a Belgian craft brewery: from campaign and content to event, merch and website. I come up with the idea and make it too. Now I am looking for a new challenge.</p>
-<div class="cta"><a class="btn" href="#werk-en">See my work</a><a class="btn ghost" href="cv-benjamin-herteleer-en.pdf" target="_blank" rel="noopener">Download CV ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
-<figure class="hero-img"><img src="img/me.webp" alt="Portrait of Benjamin Herteleer" width="506" height="1100"></figure></section>
-<div class="stats"><div class="stat"><b>500+</b><span>tickets sold</span><small>Dolle Vrijdag, two editions</small></div><div class="stat"><b>1,000+</b><span>event visitors</span><small>at events I helped run and promote</small></div><div class="stat"><b>36,500+</b><span>reel views</span><small>my eight most viewed reels</small></div></div>
-<section class="block"><h2 class="sec">What I do</h2><div class="dos"><div class="do"><span class="num">01</span><h3>Campaigns &amp; events</h3><p>From idea to execution: concept, planning, promotion and ticketing.</p></div><div class="do"><span class="num">02</span><h3>Social media &amp; content</h3><p>Instagram, Facebook and TikTok in Dutch and English. Photo, video, copy and Meta Ads.</p></div><div class="do"><span class="num">03</span><h3>Design &amp; merch</h3><p>Identity, posters, print and merch, all the way to the print proof.</p></div><div class="do"><span class="num">04</span><h3>Web &amp; AI</h3><p>Websites from structure and copy to design and code. AI enthusiast: I work with Claude every day.</p></div></div></section>
-<section class="block" id="werk-en"><div class="sec-row"><h2 class="sec">Selected work</h2><p>Four projects, each with the brief, my approach and what it delivered.</p></div><article class="case"><div class="case-head"><div><p class="kicker"><span>01</span>Event · 2025–2026</p><h3>Dolle Vrijdag</h3><p class="sum">A new evening event at the brewery, built as a brand of its own.</p></div><dl class="qar"><div><dt>Brief</dt><dd>Bring a younger crowd to De Dolle, people who did not know the brewery yet.</dd></div><div><dt>Approach</dt><dd>Name, logo, posters, shirts and a dedicated Instagram account, with online ticketing. After each edition I looked at which posts sold tickets and adjusted.</dd></div><div class="res"><dt>Result</dt><dd><b>500+ tickets</b> across two editions, from a crowd that had not come to the brewery before.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/ph-dv-crowd.webp" data-cap="Crowd at Dolle Vrijdag"><img src="img/ph-dv-crowd.webp" alt="Crowd at Dolle Vrijdag" width="1100" height="733" loading="lazy"></button><button class="shot contain" type="button" data-full="img/ev-dv-poster.webp" data-cap="Poster, 2026 edition"><img src="img/ev-dv-poster.webp" alt="Poster, 2026 edition" width="834" height="1100" loading="lazy"></button><button class="shot contain" type="button" data-full="img/ev-dv-logo.webp" data-cap="Dolle Vrijdag logo"><img src="img/ev-dv-logo.webp" alt="Dolle Vrijdag logo" width="964" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-dv-team.webp" data-cap="The team in Dolle Vrijdag shirts"><img src="img/ph-dv-team.webp" alt="The team in Dolle Vrijdag shirts" width="733" height="1100" loading="lazy"></button></div><p class="credit">Photos: @howmie.be</p></article><article class="case"><div class="case-head"><div><p class="kicker"><span>02</span>Website · 2026</p><h3>dedollebrouwers.be</h3><p class="sum">The brewery's new website, fully developed by me.</p><a class="btn" href="https://www.dedollebrouwers.be/en" target="_blank" rel="noopener">Visit the site ↗</a></div><dl class="qar"><div><dt>Brief</dt><dd>Replace an outdated site with one that sounds and looks like the brand, in two languages.</dd></div><div><dt>Approach</dt><dd>Structure, all copy in Dutch and English, design and development. With a page per beer, a web shop, tour booking, a stockist map and a monthly news page.</dd></div><div class="res"><dt>Result</dt><dd><b>Live</b> at dedollebrouwers.be: one place for visitors, beer fans and stockists, in Dutch and English.</dd></div></dl></div><div class="media web"><button class="shot cover" type="button" data-full="img/web-ddb-home.webp" data-cap="Homepage"><img src="img/web-ddb-home.webp" alt="Homepage" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-beer.webp" data-cap="Oerbier beer page"><img src="img/web-ddb-beer.webp" alt="Oerbier beer page" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-nieuws.webp" data-cap="Oerbier Fake Nieuws"><img src="img/web-ddb-nieuws.webp" alt="Oerbier Fake Nieuws" width="1200" height="750" loading="lazy"></button><button class="shot cover" type="button" data-full="img/web-ddb-shop.webp" data-cap="Oershop"><img src="img/web-ddb-shop.webp" alt="Oershop" width="1200" height="750" loading="lazy"></button></div></article><article class="case"><div class="case-head"><div><p class="kicker"><span>03</span>Merch</p><h3>Merch collection</h3><p class="sum">Shirts, hoodies and sweaters, plus the Oeral glass.</p></div><dl class="qar"><div><dt>Brief</dt><dd>Fans had been asking for the sweaters for four years. Time for a collection that fits the brand.</dd></div><div><dt>Approach</dt><dd>Designs with the brewery's characters, print files, printer coordination and proofs, a photo shoot and the online launch.</dd></div><div class="res"><dt>Result</dt><dd><b>A full collection</b>, launched on social media and for sale in the Oershop on the new website.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/ph-merch-hoodie.webp" data-cap="Hoodie with back print"><img src="img/ph-merch-hoodie.webp" alt="Hoodie with back print" width="880" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-merch-rack.webp" data-cap="Hoodie and sweater"><img src="img/ph-merch-rack.webp" alt="Hoodie and sweater" width="880" height="1100" loading="lazy"></button><button class="shot cover" type="button" data-full="img/ph-black-front.webp" data-cap="The black shirt"><img src="img/ph-black-front.webp" alt="The black shirt" width="880" height="1100" loading="lazy"></button><button class="shot contain" type="button" data-full="img/oe-glass.webp" data-cap="The Oeral glass"><img src="img/oe-glass.webp" alt="The Oeral glass" width="690" height="1038" loading="lazy"></button></div><p class="credit">Product photos: carolleservaygephotography</p></article><article class="case"><div class="case-head"><div><p class="kicker"><span>04</span>Social media &amp; content</p><h3>The brewing year online</h3><p class="sum">Instagram, Facebook and TikTok, all year round.</p></div><dl class="qar"><div><dt>Brief</dt><dd>Keep the brewery visible all year, in Dutch and English, for fans at home and abroad.</dd></div><div><dt>Approach</dt><dd>Content that follows the brewing year, from Boskeun at Easter to Stille Nacht in December. Photo, video, copy and my own illustrations. I track which posts get reach and which ones sell.</dd></div><div class="res"><dt>Result</dt><dd><b>36,500+ views</b> on my eight most viewed reels. The hand-drawn carousel "Brewed the Dolle way" got <b>440+ likes in 18 hours</b>.</dd></div></dl></div><div class="media row"><button class="shot cover" type="button" data-full="img/brew-01.webp" data-cap="Brewed the Dolle way carousel"><img src="img/brew-01.webp" alt="Brewed the Dolle way carousel" width="960" height="1200" loading="lazy"></button><button class="shot cover" type="button" data-full="img/stillenacht-illu.webp" data-cap="Stille Nacht, my illustration"><img src="img/stillenacht-illu.webp" alt="Stille Nacht, my illustration" width="797" height="1065" loading="lazy"></button><button class="shot cover" type="button" data-full="img/reserva.webp" data-cap="Oerbier Reserva"><img src="img/reserva.webp" alt="Oerbier Reserva" width="797" height="850" loading="lazy"></button><button class="shot cover" type="button" data-full="img/xmas-card.webp" data-cap="Christmas card, my illustration"><img src="img/xmas-card.webp" alt="Christmas card, my illustration" width="797" height="799" loading="lazy"></button></div></article></section>
-<section class="block"><h2 class="sec">More work</h2><div class="more"><div class="more-card"><button class="shot cover" type="button" data-full="img/site-home.webp" data-cap="krisherteleer.com"><img src="img/site-home.webp" alt="krisherteleer.com" width="800" height="499" loading="lazy"></button><h3>krisherteleer.com</h3><p>Online gallery for hundreds of works by artist Kris Herteleer, with 8 collections and an interactive map.</p><a href="https://www.krisherteleer.com" target="_blank" rel="noopener">View the site ↗</a></div><div class="more-card"><button class="shot contain" type="button" data-full="img/ev-zv-a6.webp" data-cap="Zomerse Vrijdagen &amp; Comedy Brewery"><img src="img/ev-zv-a6.webp" alt="Zomerse Vrijdagen &amp; Comedy Brewery" width="993" height="1400" loading="lazy"></button><h3>Zomerse Vrijdagen &amp; Comedy Brewery</h3><p>Illustration, flyers, posters and promotion for other events at the brewery.</p></div><div class="more-card"><button class="shot contain" type="button" data-full="img/d-crew.webp" data-cap="Illustration"><img src="img/d-crew.webp" alt="Illustration" width="1054" height="1010" loading="lazy"></button><h3>Illustration</h3><p>My own drawings of the brewery's characters, for posts, cards and shirts.</p></div></div></section>
-<section class="block about" id="over-en"><div><h2 class="sec">About me</h2><p class="about-text">I work best where an idea quickly becomes visible: coming up with a campaign, designing the poster, writing the posts, building the site and being there at the event. I studied Communication &amp; Digital Marketing at Arteveldehogeschool and did an internship in Lisbon. Now I am looking for a role in marketing, communications or events, at a brand, cultural venue or organisation with a story of its own.</p><p class="extra">Driving licence B · open to relocating</p></div>
-<div class="cv-col"><h3>Experience</h3><ul class="tl"><li><span class="when">2021 – present</span><div><b>Marketing &amp; communications</b><span class="org">De Dolle Brouwers, Esen (BE)</span><p>All marketing: campaigns, social media and Meta Ads, events, merch and the website. Student job during my studies, permanent since 2025. At the brewery since 2017.</p></div></li><li><span class="when">2024 – 2025</span><div><b>Marketing &amp; sales intern</b><span class="org">Lisbon Boat Party, Lisbon (PT)</span><p>Social media, Meta Ads, plus SEO and SEA on GetYourGuide, Viator, Klook and Shotgun.</p></div></li></ul><h3>Education</h3><ul class="tl"><li><span class="when">2021 – 2025</span><div><b>Bachelor in Communication &amp; Digital Marketing</b><span class="org">Arteveldehogeschool Ghent</span><p>Graduated with distinction.</p></div></li></ul>
-<div class="facts"><div><h3>Tools</h3><p>Illustrator, Photoshop, InDesign, Procreate, Canva, Meta Business Suite and Ads Manager, Shopify, Astro, Claude and other AI tools</p></div><div><h3>Languages</h3><p>Dutch (native), English (fluent), French (good)</p></div></div></div></section>
-</main>
-<section class="contact" id="contact-en"><div class="wrap"><h2>Let's talk.</h2><p class="contact-sub">Looking for someone who can come up with a campaign and make it too? Send me an email or give me a call.</p>
-<div class="contact-row"><div class="copyrow"><code class="mail">hallo@benjaminherteleer.work</code><button type="button" class="copybtn" data-copy="Copy" data-copied="Copied">Copy</button></div>
-<a href="tel:+32494705597">+32 494 70 55 97</a><a href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a><a href="cv-benjamin-herteleer-en.pdf" target="_blank" rel="noopener">Download CV ↗</a></div>
-<footer><span>© 2026 Benjamin Herteleer</span><span>Written, designed and built by me.</span></footer></div></section>
+<header class="top"><a class="logo" href="#top-en" aria-label="Benjamin Herteleer">BH</a><nav aria-label="Menu"><a class="pill" href="#werk-en">Work</a><a class="pill" href="#over-en">About</a><a class="pill" href="#contact-en">Contact</a></nav>
+<div class="right"><a class="pill dark" href="cv-benjamin-herteleer-en.pdf" target="_blank" rel="noopener">CV ↗</a><button class="langbtn" type="button" data-set="nl">NL</button></div></header>
+
+<section class="hero" id="top-en">
+ <h1><span class="w" style="--i:0"><span>A marketer</span></span><span class="w" style="--i:1"><span>who makes</span></span><span class="w" style="--i:2"><span>things.</span></span></h1>
+ <div class="hero-side">
+  <div class="portrait"><img class="" src="img/me.webp" alt="Benjamin Herteleer" width="506" height="1100"><svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#c">OPEN TO A NEW ROLE · AI ENTHUSIAST · OPEN TO A NEW ROLE · AI ENTHUSIAST · </textPath></text><circle cx="100" cy="100" r="30"/></svg><img class="sticker s1" src="img/d-crew.webp" alt="" width="1054" height="1010"><img class="sticker s2" src="img/ev-dv-logo.webp" alt="" width="964" height="1100"></div>
+ </div>
+ <p class="intro">I'm Benjamin. I come up with brands, campaigns and content, and I make them too: from the poster to the website. Since 2021 I've done that for <strong>De Dolle Brouwers</strong>, now I'm looking for a new team.</p>
+ <div class="cta"><a class="pill big dark" href="#werk-en">See my work →</a><a class="pill big" href="#contact-en">Let's talk</a></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track"><span>Branding</span><i>✱</i><span>Content</span><i>✱</i><span>Web</span><i>✱</i><span>Illustration</span><i>✱</i><span>AI</span><i>✱</i><span>Social</span><i>✱</i><span>Merch</span><i>✱</i><span>Branding</span><i>✱</i><span>Content</span><i>✱</i><span>Web</span><i>✱</i><span>Illustration</span><i>✱</i><span>AI</span><i>✱</i><span>Social</span><i>✱</i><span>Merch</span><i>✱</i></div></div>
+
+<section class="work" id="werk-en">
+ <div class="sec-head reveal"><h2>Work</h2><p>A selection of things I made. Click a project for more.</p></div>
+ <div class="grid"><button class="card wide reveal" type="button" data-project='{"t": "dedollebrouwers.be", "g": "Web · Copy · Design · AI", "p": "The brewery&#39;s new website, from structure and bilingual copy to design and code. With a page per beer, a web shop, tour booking, a stockist map and a monthly newspaper. Built with Claude: I came up with it, wrote it and steered it, AI helped build it.", "l": "https://www.dedollebrouwers.be/en", "v": "Visit the site", "i": [["img/web-ddb-home.webp", 1200, 750], ["img/web-ddb-beer.webp", 1200, 750], ["img/web-ddb-nieuws.webp", 1200, 750], ["img/web-ddb-shop.webp", 1200, 750]]}' aria-label="View project: dedollebrouwers.be"><span class="frame"><img class="" src="img/web-ddb-home.webp" alt="dedollebrouwers.be" width="1200" height="750" loading="lazy"></span><span class="meta"><b>dedollebrouwers.be</b><em>Web · Copy · Design · AI</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Brewed the Dolle way", "g": "Illustration · Social", "p": "Twelve hand-drawn slides explaining the brewing process, starring the little Oerbier men. The drawings later got a second life as a shirt and as a page on the new website.", "l": null, "v": "Visit the site", "i": [["img/brew-01.webp", 960, 1200], ["img/brew-02.webp", 960, 1200], ["img/brew-03.webp", 960, 1200], ["img/brew-04.webp", 960, 1200], ["img/brew-05.webp", 960, 1200], ["img/brew-07.webp", 960, 1200], ["img/brew-09.webp", 960, 1200], ["img/brew-10.webp", 960, 1200], ["img/brew-12.webp", 960, 1200]]}' aria-label="View project: Brewed the Dolle way"><span class="frame"><img class="" src="img/brew-01.webp" alt="Brewed the Dolle way" width="960" height="1200" loading="lazy"></span><span class="meta"><b>Brewed the Dolle way</b><em>Illustration · Social</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Merch", "g": "Design · Production", "p": "Shirts, hoodies, sweaters and the Oeral glass. From design and print files to proofs, photo shoot and launch. Fans had been asking for the sweaters for years, now they&#39;re here.", "l": null, "v": "Visit the site", "i": [["img/ph-merch-hoodie.webp", 880, 1100], ["img/ph-merch-rack.webp", 880, 1100], ["img/ph-black-front.webp", 880, 1100], ["img/ph-black-back.webp", 880, 1100], ["img/ph-merch-sweater.webp", 880, 1100], ["img/d-crew.webp", 1054, 1010], ["img/d-brewing.webp", 746, 1100], ["img/oe-glass.webp", 690, 1038]]}' aria-label="View project: Merch"><span class="frame"><img class="" src="img/ph-merch-hoodie.webp" alt="Merch" width="880" height="1100" loading="lazy"></span><span class="meta"><b>Merch</b><em>Design · Production</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Social &amp; illustration", "g": "Content · Illustration", "p": "The brewing year online, from Boskeun at Easter to Stille Nacht in December. My own photos, video and illustrations that put the brewery&#39;s characters in new scenes, in Dutch and English.", "l": null, "v": "Visit the site", "i": [["img/stillenacht-illu.webp", 797, 1065], ["img/xmas-card.webp", 797, 799], ["img/boskeun-illu.webp", 797, 978], ["img/valentine.webp", 797, 799], ["img/reserva.webp", 797, 850], ["img/lichtervelds.webp", 797, 999], ["img/stout.webp", 797, 1022], ["img/signs45.webp", 797, 1002]]}' aria-label="View project: Social &amp; illustration"><span class="frame"><img class="" src="img/stillenacht-illu.webp" alt="Social &amp; illustration" width="797" height="1065" loading="lazy"></span><span class="meta"><b>Social &amp; illustration</b><em>Content · Illustration</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card tall reveal" type="button" data-project='{"t": "Dolle Vrijdag", "g": "Event · Branding", "p": "An evening party at the brewery, built as a brand of its own to bring in a younger crowd: name, a disco-ball mascot logo, posters, shirts and a dedicated Instagram.", "l": null, "v": "Visit the site", "i": [["img/ph-dv-crowd.webp", 1100, 733], ["img/ev-dv-poster.webp", 834, 1100], ["img/ev-dv-logo.webp", 964, 1100], ["img/d-dv.webp", 860, 1100], ["img/ph-dv-team.webp", 733, 1100]]}' aria-label="View project: Dolle Vrijdag"><span class="frame"><img class="" src="img/ev-dv-poster.webp" alt="Dolle Vrijdag" width="834" height="1100" loading="lazy"></span><span class="meta"><b>Dolle Vrijdag</b><em>Event · Branding</em><span class="go" aria-hidden="true">↗</span></span></button><button class="card wide reveal" type="button" data-project='{"t": "krisherteleer.com", "g": "Web · Design", "p": "An online gallery for hundreds of works by artist Kris Herteleer, with eight collections, an interactive map and a signature that draws itself.", "l": "https://www.krisherteleer.com", "v": "Visit the site", "i": [["img/site-home.webp", 800, 499], ["img/site-collections.webp", 800, 499]]}' aria-label="View project: krisherteleer.com"><span class="frame"><img class="" src="img/site-home.webp" alt="krisherteleer.com" width="800" height="499" loading="lazy"></span><span class="meta"><b>krisherteleer.com</b><em>Web · Design</em><span class="go" aria-hidden="true">↗</span></span></button><a class="card tall more reveal" href="#contact-en"><span class="frame"><span class="more-in"><b>Curious for more?</b><span>Happy to tell you the full story behind every project.</span><span class="go" aria-hidden="true">→</span></span></span></a></div>
+</section>
+
+<section class="dos">
+ <h2 class="reveal">What I do</h2>
+ <ul><li class="reveal"><span class="n">01</span><h3>Brand &amp; design</h3><p>Identities, logos, posters and merch you recognise from afar.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">02</span><h3>Content &amp; social</h3><p>Photo, video, copy and illustration, in Dutch and English.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">03</span><h3>Web</h3><p>Sites from structure and copy to design and code.</p><span class="arr" aria-hidden="true">→</span></li><li class="reveal"><span class="n">04</span><h3>AI</h3><p>I work with Claude every day: making things faster, without it smelling like AI.</p><span class="arr" aria-hidden="true">→</span></li></ul>
+</section>
+
+<section class="ai">
+ <div class="ai-in reveal"><span class="spark" aria-hidden="true">✦</span><h2>Built with AI.</h2><p>This site, my CV and dedollebrouwers.be were made with Claude. I come up with the idea and guard the taste, AI helps build. That way I make in weeks what used to take an agency months.</p></div>
+</section>
+
+<section class="about" id="over-en">
+ <div class="reveal"><h2>About me</h2><p class="lead">I grew up in a brewery, studied Communication &amp; Digital Marketing at Arteveldehogeschool and did an internship in Lisbon. I work best in a young team, where an idea quickly becomes visible. Driving licence, open to relocating.</p>
+ <div class="facts"><p>Illustrator · Photoshop · InDesign · Procreate · Canva · Meta Ads · Shopify · Astro · Claude</p><p>Dutch · English · French</p></div>
+ <div class="cta"><a class="pill dark" href="cv-benjamin-herteleer-en.pdf" target="_blank" rel="noopener">CV ↗</a><a class="pill" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+ <ul class="tl reveal"><li><span>2021 – present</span><b>Marketing &amp; communications</b><em>De Dolle Brouwers · student job, permanent since 2025</em></li><li><span>2024 – 2025</span><b>Marketing &amp; sales intern</b><em>Lisbon Boat Party, Lisbon</em></li><li><span>2021 – 2025</span><b>Bachelor in Communication &amp; Digital Marketing</b><em>Arteveldehogeschool Ghent · with distinction</em></li></ul>
+</section>
+
+<section class="contact" id="contact-en">
+ <span class="talk" aria-hidden="true">Let's talk!</span>
+ <h2><span>Let's</span><span>talk.</span></h2>
+ <p>Looking for someone who can come up with an idea and make it too? Send me an email.</p>
+ <div class="row"><div class="copyrow"><a class="mail" href="mailto:hallo@benjaminherteleer.work">hallo@benjaminherteleer.work</a><button type="button" class="copybtn" data-copy="Copy" data-copied="Copied">Copy</button></div>
+ <a class="pill light" href="tel:+32494705597">+32 494 70 55 97</a><a class="pill light" href="https://www.linkedin.com/in/benjamin-herteleer-6a9912219" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+ <footer><span>© 2026 Benjamin Herteleer</span><span>Designed and built by me, with Claude.</span></footer>
+</section>
 </div>
-<dialog id="lb" aria-label="Afbeelding"><form method="dialog"><button aria-label="Sluiten">×</button></form><img id="lbimg" alt=""><p id="lbcap"></p></dialog>
+<dialog id="pm" aria-labelledby="pm-t"><form method="dialog"><button class="x" aria-label="Sluiten">×</button></form>
+<div class="pm-head"><em id="pm-g"></em><h3 id="pm-t"></h3><p id="pm-p"></p><a id="pm-l" class="pill dark" target="_blank" rel="noopener"></a></div>
+<div class="pm-imgs" id="pm-i"></div></dialog>
 <script>
 (function(){
   function setLang(l){
@@ -217,27 +295,45 @@ dialog form button{background:#F3F1EA;color:#16140F;border:0;border-radius:99px;
     document.getElementById('lang-en').hidden=(l!=='en');
     document.documentElement.lang=l;
     try{localStorage.setItem('lang',l)}catch(e){}
+    observe();
   }
   document.querySelectorAll('.langbtn').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-set'));window.scrollTo(0,0)})});
   var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   if(location.hash==='#en') saved='en';
-  if(saved==='en') setLang('en');
 
-  var lb=document.getElementById('lb'), im=document.getElementById('lbimg'), cap=document.getElementById('lbcap');
-  document.querySelectorAll('[data-full]').forEach(function(b){
-    b.addEventListener('click',function(){
-      im.src=b.dataset.full; im.alt=(b.querySelector('img')||{}).alt||''; cap.textContent=b.dataset.cap||'';
-      if(lb.showModal) lb.showModal();
+  // reveal on scroll
+  var io='IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08}) : null;
+  function observe(){
+    document.querySelectorAll('.lang:not([hidden]) .reveal:not(.in)').forEach(function(el){ if(io) io.observe(el); else el.classList.add('in'); });
+  }
+  if(saved==='en') setLang('en'); else observe();
+
+  // project dialog
+  var pm=document.getElementById('pm');
+  document.querySelectorAll('[data-project]').forEach(function(c){
+    c.addEventListener('click',function(){
+      var d=JSON.parse(c.getAttribute('data-project'));
+      document.getElementById('pm-t').innerHTML=d.t;
+      document.getElementById('pm-g').innerHTML=d.g;
+      document.getElementById('pm-p').innerHTML=d.p;
+      var l=document.getElementById('pm-l');
+      if(d.l){ l.href=d.l; l.textContent=d.v+' ↗'; l.hidden=false; } else { l.hidden=true; }
+      var box=document.getElementById('pm-i'); box.innerHTML='';
+      d.i.forEach(function(im){
+        var img=document.createElement('img'); img.src=im[0]; img.width=im[1]; img.height=im[2]; img.alt=''; img.loading='lazy'; box.appendChild(img);
+      });
+      if(pm.showModal){ pm.showModal(); pm.scrollTop=0; }
     });
   });
-  lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+  pm.addEventListener('click',function(e){ if(e.target===pm) pm.close(); });
 
   document.querySelectorAll('.copybtn').forEach(function(c){
     c.addEventListener('click',function(){
-      var code=c.parentNode.querySelector('.mail'); var t=code.textContent;
-      function sel(){ var r=document.createRange(); r.selectNodeContents(code); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+      var t=c.parentNode.querySelector('.mail').textContent;
       var done=function(){c.textContent=c.dataset.copied;setTimeout(function(){c.textContent=c.dataset.copy},1600)};
-      try{ navigator.clipboard.writeText(t).then(done,sel); }catch(e){ sel(); }
+      try{ navigator.clipboard.writeText(t).then(done,function(){}); }catch(e){}
     });
   });
 })();
