@@ -68,7 +68,7 @@ T = {
       ('2021 – 2025', 'Bachelor Communicatie &amp; Digitale Marketing', 'Arteveldehogeschool Gent · met onderscheiding')],
   tools='Photoshop · Canva · Meta Ads · Shopify · Astro · Illustrator · Procreate · Claude',
   langs='Nederlands · Engels · Frans',
-  contact_h=['Zeg eens', 'hallo.'], contact_sub='Zoek je iemand die een idee kan bedenken én maken? Stuur me een mail.',
+  contact_h=['Even', 'kennismaken?'], contact_sub='Zoek je iemand die een idee kan bedenken én maken? Stuur me een mail.',
   copy='Kopieer', copied='Gekopieerd', footer='Zelf geschreven, ontworpen en gebouwd.', close='Sluiten',
  ),
  'en': dict(
@@ -111,7 +111,7 @@ T = {
       ('2021 – 2025', 'Bachelor in Communication &amp; Digital Marketing', 'Arteveldehogeschool Ghent · with distinction')],
   tools='Photoshop · Canva · Meta Ads · Shopify · Astro · Illustrator · Procreate · Claude',
   langs='Dutch · English · French',
-  contact_h=['Say', 'hello.'], contact_sub='Looking for someone who can come up with an idea and make it too? Send me an email.',
+  contact_h=['Nice to', 'meet you?'], contact_sub='Looking for someone who can come up with an idea and make it too? Send me an email.',
   copy='Copy', copied='Copied', footer='Written, designed and built by me.', close='Close',
  ),
 }
