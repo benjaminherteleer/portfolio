@@ -139,7 +139,7 @@ def view(k, t):
     dos = ''.join(f'<li class="reveal"><span class="n">0{i+1}</span><h3>{h}</h3><p>{p}</p><span class="arr" aria-hidden="true">→</span></li>' for i, (h, p) in enumerate(t['do']))
     tl = ''.join(f'<li><span>{w}</span><b>{r}</b><em>{o}</em></li>' for w, r, o in t['tl'])
     return f'''<div class="lang" id="lang-{k}" lang="{k}"{'' if k == 'nl' else ' hidden'}>
-<header class="top"><a class="logo" href="#top{s}" aria-label="Benjamin Herteleer">BH</a><nav aria-label="Menu">{nav}</nav>
+<header class="top"><a class="logo" href="#top{s}" aria-label="Benjamin Herteleer"><svg viewBox="0 0 64 64" aria-hidden="true">  <rect width="64" height="64" rx="16" fill="#F2B300"/>  <rect x="14" y="10" width="9" height="44" rx="2" fill="#0E0E0E"/>  <circle cx="31" cy="38" r="12" fill="none" stroke="#0E0E0E" stroke-width="9"/>  <g stroke="#0E0E0E" stroke-width="4" stroke-linecap="round" transform="translate(48 16)">    <line x1="0" y1="-6" x2="0" y2="6"/><line x1="-5.2" y1="-3" x2="5.2" y2="3"/><line x1="-5.2" y1="3" x2="5.2" y2="-3"/>  </g></svg><span>Benjamin Herteleer</span></a><nav aria-label="Menu">{nav}</nav>
 <div class="right"><a class="pill dark" href="{t['cv']}" target="_blank" rel="noopener">{t['cv_btn']} ↗</a><button class="langbtn" type="button" data-set="{'en' if k == 'nl' else 'nl'}">{t['switch']}</button></div></header>
 
 <section class="hero" id="top{s}">
@@ -193,6 +193,9 @@ html = f'''<!doctype html>
 <meta name="description" content="Portfolio van Benjamin Herteleer: copy, social media, campagnes, graphic design, web en SEO. Marketeer die zelf maakt.">
 <meta property="og:title" content="Benjamin Herteleer · marketeer die zelf maakt">
 <meta property="og:description" content="Copy, social media, campagnes, graphic design en web: van de affiche tot de website.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:image" content="https://benjaminherteleer.work/img/web-ddb-home.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,800;125,900&family=Figtree:wght@400;500;600&display=swap">
