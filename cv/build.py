@@ -8,7 +8,7 @@ T = {
         lang='nl', title='Cv Benjamin Herteleer',
         role='Marketing &amp; communicatie',
         profile_h='Profiel',
-        profile='Marketeer die zelf maakt. Bij De Dolle Brouwers doe ik sinds 2021 de volledige marketing: campagnes, social media, events, merch en de nieuwe website, van strategie tot uitvoering. Ik zoek een rol in marketing, communicatie of events waar ik concept, content, design en organisatie kan combineren.',
+        profile='Marketeer die zelf maakt. Bij De Dolle Brouwers doe ik sinds 2021 de volledige marketing: campagnes, social media, events, merch en de nieuwe website, van strategie tot uitvoering. Ik zoek een rol in marketing, content of communicatie waar ik copy, design en web kan combineren.',
         exp_h='Ervaring',
         jobs=[
             ('Marketing &amp; communicatie', 'De Dolle Brouwers, Esen', '2021 – nu', 'Jobstudent tijdens mijn studie, vast sinds 2025. In de brouwerij sinds 2017 (bar, bottellijn).', [
@@ -35,7 +35,7 @@ T = {
         extra='Rijbewijs B · bereid te verhuizen',
         skills_h='Vaardigheden',
         skills=[
-            ('Marketing', 'Campagnes, social media, Meta Ads, eventmarketing, SEO, GEO en SEA'),
+            ('Marketing', 'Campagnes, social media, copywriting, Meta Ads, SEO, GEO en SEA'),
             ('Content', 'Copywriting NL/EN, foto en video, illustratie'),
             ('Design', 'Photoshop, Canva, Illustrator, Procreate'),
             ('Web', 'Websites van concept tot code (Astro), Shopify'),
@@ -49,7 +49,7 @@ T = {
         lang='en', title='CV Benjamin Herteleer',
         role='Marketing &amp; communications',
         profile_h='Profile',
-        profile='A marketer who makes things. Since 2021 I have run all marketing for De Dolle Brouwers, a Belgian craft brewery: campaigns, social media, events, merch and the new website, from strategy to execution. I am looking for a role in marketing, communications or events where I can combine concept, content, design and organisation.',
+        profile='A marketer who makes things. Since 2021 I have run all marketing for De Dolle Brouwers, a Belgian craft brewery: campaigns, social media, events, merch and the new website, from strategy to execution. I am looking for a role in marketing, content or communications where I can combine copy, design and web.',
         exp_h='Experience',
         jobs=[
             ('Marketing &amp; communications', 'De Dolle Brouwers, Esen (BE)', '2021 – present', 'Student job during my studies, permanent since 2025. At the brewery since 2017 (bar, bottling).', [
@@ -76,7 +76,7 @@ T = {
         extra='Driving licence B · open to relocating',
         skills_h='Skills',
         skills=[
-            ('Marketing', 'Campaigns, social media, Meta Ads, event marketing, SEO, GEO and SEA'),
+            ('Marketing', 'Campaigns, social media, copywriting, Meta Ads, SEO, GEO and SEA'),
             ('Content', 'Copywriting NL/EN, photo and video, illustration'),
             ('Design', 'Photoshop, Canva, Illustrator, Procreate'),
             ('Web', 'Websites from concept to code (Astro), Shopify'),
