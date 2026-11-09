@@ -29,7 +29,7 @@ T = {
               ('krisherteleer.com', '', 'Ontwerp en bouw van een online galerij voor honderden werken van kunstenaar Kris Herteleer: 8 collecties, een interactieve kaart en een verkoopsectie.')],
         edu_h='Opleiding',
         edu=[
-            ('Bachelor Communicatie &amp; Digitale Marketing', 'Arteveldehogeschool Gent', '2021 – 2025', 'Afgestudeerd met onderscheiding.'),
+            ('Bachelor Communicatie, afstudeerrichting Digitale Marketing', 'Arteveldehogeschool Gent', '2021 – 2025', 'Afgestudeerd met onderscheiding.'),
         ],
         contact_h='Contact',
         extra='Rijbewijs B · bereid te verhuizen',
@@ -70,7 +70,7 @@ T = {
               ('krisherteleer.com', '', 'Designed and built an online gallery for hundreds of works by artist Kris Herteleer: 8 collections, an interactive map and a sales section.')],
         edu_h='Education',
         edu=[
-            ('Bachelor in Communication &amp; Digital Marketing', 'Arteveldehogeschool Ghent', '2021 – 2025', 'Graduated with distinction.'),
+            ('Bachelor in Communication, major in Digital Marketing', 'Arteveldehogeschool Ghent', '2021 – 2025', 'Graduated with distinction.'),
         ],
         contact_h='Contact',
         extra='Driving licence B · open to relocating',
